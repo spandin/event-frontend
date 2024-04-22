@@ -3,9 +3,11 @@ import { mode } from '@chakra-ui/theme-tools'
 import type { StyleFunctionProps } from '@chakra-ui/styled-system'
 
 import colors from './colors'
+import { inputTheme } from './components/input'
+import { buttonTheme } from './components/button'
 
 const config = {
-  initialColorMode: 'dark',
+  initialColorMode: 'light',
   useSystemColorMode: false
 }
 
@@ -28,13 +30,22 @@ const theme = extendTheme({
   components: {
     Text: {
       baseStyle: {
-        fontWeight: 200
+        fontWeight: 300
+      }
+    },
+    Input: inputTheme,
+    Button: buttonTheme,
+    FormLabel: {
+      baseStyle: {
+        fontSize: 'md',
+        fontWeight: 500,
+        lineHeight: 1
       }
     }
   },
 
   fonts: {
-    heading: 'Poppins, sans-serif',
+    heading: 'Jost, sans-serif',
     body: 'Inter, sans-serif'
   },
 
