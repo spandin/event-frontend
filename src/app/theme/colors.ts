@@ -9,7 +9,8 @@ const colors = {
     300: '#c0b8e6',
     200: '#d5cfef',
     100: '#eae7f7'
-  }
+  },
+  invalid: '#FC8181'
 }
 
 export default colors
