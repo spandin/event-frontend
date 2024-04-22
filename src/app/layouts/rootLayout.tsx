@@ -1,7 +1,8 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
-const Layouts: React.FC = () => {
-  return <div />
+const RootLayout: React.FC = () => {
+  return <Outlet />
 }
 
-export default Layouts
+export default RootLayout
