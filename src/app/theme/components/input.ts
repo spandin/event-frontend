@@ -1,13 +1,15 @@
 import { inputAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
 
-const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(inputAnatomy.keys)
+const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  inputAnatomy.keys
+)
 
 const base = definePartsStyle({
   field: {
     h: 12,
     borderRadius: 10,
-    border: '1px solid',
+    border: '2px solid',
     fontSize: 'md',
     fontFamily: 'Inter',
 
