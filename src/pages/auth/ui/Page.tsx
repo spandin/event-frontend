@@ -5,8 +5,9 @@ import { LoginForm } from './login/LoginForm'
 import { RegisterForm } from './register/RegisterForm'
 import { LoginContent } from './login/LoginContent'
 import { RegisterContent } from './register/RegisterContent'
-import { AUTH_FORMS } from '../model/types'
 import { BottomFormText } from './BottomFormText'
+
+import { AUTH_FORMS } from '../model/types'
 
 export const AuthPage: React.FC = () => {
   const [authFormActive, setAuthFormActive] = useState(AUTH_FORMS.REGISTER)
