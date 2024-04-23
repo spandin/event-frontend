@@ -9,7 +9,6 @@ import {
   Image,
   Input,
   Link,
-  Stack,
   Text,
   VStack
 } from '@chakra-ui/react'
@@ -37,7 +36,7 @@ export const LoginForm: React.FC = () => {
           <VStack spacing={8}>
             <VStack spacing={0} align={'center'}>
               <Heading variant={'h2'}>Войдите в аккаунт</Heading>
-              <Text color={'gray.500'}>используя логин и пароль</Text>
+              <Text color={'gray.500'}>используя email и пароль</Text>
             </VStack>
 
             <VStack w={'full'} spacing={4}>
@@ -88,25 +87,19 @@ export const LoginForm: React.FC = () => {
               </FormControl>
 
               <Box textAlign={'end'} w={'full'}>
-                <Link fontSize={'sm'} color={'gray.500'}>
+                <Link href={'/recovery-password/'} fontSize={'sm'} color={'gray.500'}>
                   Забыли пароль?
                 </Link>
               </Box>
 
-              <Button
-                w={'full'}
-                mt={'5px'}
-                variant={'solid'}
-                isLoading={isSubmitting}
-                type="submit"
-              >
+              <Button w={'full'} mt={1} variant={'solid'} isLoading={isSubmitting} type="submit">
                 Войти
               </Button>
             </VStack>
 
-            <TextDivider>или используя</TextDivider>
+            <TextDivider>или</TextDivider>
 
-            <Stack direction={{ base: 'column', '2xl': 'row' }} gap={4} w={'full'}>
+            <VStack gap={4} w={'full'}>
               <Button
                 w={'full'}
                 variant={'outline'}
@@ -123,7 +116,7 @@ export const LoginForm: React.FC = () => {
               >
                 Войти через Apple
               </Button>
-            </Stack>
+            </VStack>
           </VStack>
         </chakra.form>
       )}
