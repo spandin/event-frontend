@@ -3,12 +3,16 @@ import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 const outline = defineStyle({
   h: 12,
   px: 4,
-  borderColor: '#e3e3e4',
   borderRadius: 10,
-  border: '2px solid',
+  borderColor: 'black',
+  borderWidth: '2px',
   fontSize: 'md',
   fontWeight: 500,
-  color: 'black'
+  color: 'black',
+
+  _hover: {
+    backgroundColor: 'gray.100'
+  }
 })
 
 const solid = defineStyle({
@@ -24,7 +28,6 @@ const solid = defineStyle({
     background: 'brand.800',
     color: 'white'
   },
-
   _active: {
     background: 'brand.900',
     color: 'white'
