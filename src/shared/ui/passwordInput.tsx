@@ -9,8 +9,8 @@ const PasswordInput = (props: PasswordInputProps) => {
   const handleClick = () => setShow(!show)
 
   return (
-    <InputGroup variant="filled">
-      <Input type={show ? 'text' : 'password'} placeholder="Введите пароль" {...props} />
+    <InputGroup variant={'filled'}>
+      <Input type={show ? 'text' : 'password'} placeholder={'Введите пароль'} {...props} />
       <InputRightElement>
         <Button variant={'unstyled'} top={1} right={2} h={8} onClick={handleClick}>
           {show ? <ViewOffIcon /> : <ViewIcon />}
