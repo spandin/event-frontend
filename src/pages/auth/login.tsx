@@ -1,7 +1,9 @@
-import { LoginForm } from '@/feauters/auth/login/ui/loginForm'
-import { Box, Flex, Grid, Heading, HStack, Link, Text } from '@chakra-ui/react'
+import { Flex, Grid, Heading, HStack, Image, Link, Text } from '@chakra-ui/react'
 
-const LoginPage: React.FC = () => {
+import { LoginForm } from '@/features/auth/login/ui/loginForm'
+import { ICONS } from '@/shared/assets/_index'
+
+export const LoginPage: React.FC = () => {
   return (
     <Grid templateColumns={{ base: '1fr', xl: '40% 1fr' }} maxH={'100dvh'} h={'100dvh'}>
       <Flex
@@ -11,13 +13,18 @@ const LoginPage: React.FC = () => {
         py={{ base: 6, md: 12 }}
         px={8}
       >
-        <Box>
-          <Heading variant={'h4'}>AppName</Heading>
-        </Box>
+        <HStack alignSelf={{ base: 'flex-start', lg: 'center' }} gap={2}>
+          <Image boxSize={6} src={ICONS.APP_LOGO} />
+          <Heading variant={'h3'}>Event App</Heading>
+        </HStack>
+
         <LoginForm />
+
         <HStack>
           <Text>Нет аккаунта?</Text>
-          <Link color={'brand.900'}>Зарегистрироваться</Link>
+          <Link href={'/register/'} color={'brand.900'}>
+            Зарегистрироваться
+          </Link>
         </HStack>
       </Flex>
 
@@ -38,5 +45,3 @@ const LoginPage: React.FC = () => {
     </Grid>
   )
 }
-
-export default LoginPage
