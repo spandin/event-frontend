@@ -1,4 +1,4 @@
-import { LoginForm } from '@/feauters/auth/login/ui/loginForm'
+import { LoginForm } from '@/features/auth/login/ui/loginForm'
 import { Box, Flex, Grid, Heading, HStack, Link, Text } from '@chakra-ui/react'
 
 const LoginPage: React.FC = () => {
