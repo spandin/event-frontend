@@ -3,8 +3,7 @@ import { mode } from '@chakra-ui/theme-tools'
 import type { StyleFunctionProps } from '@chakra-ui/styled-system'
 
 import colors from './colors'
-import { inputTheme } from './components/input'
-import { buttonTheme } from './components/button'
+import { buttonTheme, dividerTheme, headingTheme, inputTheme } from './components/_index'
 
 const config = {
   initialColorMode: 'light',
@@ -35,6 +34,8 @@ const theme = extendTheme({
     },
     Input: inputTheme,
     Button: buttonTheme,
+    Divider: dividerTheme,
+    Heading: headingTheme,
     FormLabel: {
       baseStyle: {
         fontSize: 'md',
