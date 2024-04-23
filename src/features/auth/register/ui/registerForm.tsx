@@ -18,7 +18,7 @@ import PasswordInput from '@/shared/ui/passwordInput'
 import TextDivider from '@/shared/ui/textDivider'
 import { ICONS } from '@/shared/assets/_index'
 
-export const LoginForm: React.FC = () => {
+export const RegisterForm: React.FC = () => {
   return (
     <Formik
       initialValues={{
@@ -35,7 +35,7 @@ export const LoginForm: React.FC = () => {
         <chakra.form onSubmit={handleSubmit} noValidate w={{ base: '100%', lg: '80%' }}>
           <VStack spacing={8}>
             <VStack spacing={0} align={'center'}>
-              <Heading variant={'h2'}>Войдите в аккаунт</Heading>
+              <Heading variant={'h2'}>Зарегистрируйте аккаунт</Heading>
               <Text color={'gray.500'}>используя email и пароль</Text>
             </VStack>
 
@@ -106,7 +106,7 @@ export const LoginForm: React.FC = () => {
                 whiteSpace={'wrap'}
                 leftIcon={<Image w={'20px'} h={'20px'} src={ICONS.GOOGLE_LOGO} />}
               >
-                Войти через Google
+                Зарегистрироваться через Google
               </Button>
               <Button
                 w={'full'}
@@ -114,7 +114,7 @@ export const LoginForm: React.FC = () => {
                 whiteSpace={'wrap'}
                 leftIcon={<Image w={'20px'} h={'32px'} src={ICONS.APPLE_LOGO} />}
               >
-                Войти через Apple
+                Зарегистрироваться через Apple
               </Button>
             </VStack>
           </VStack>

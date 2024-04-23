@@ -9,24 +9,21 @@ const base = definePartsStyle({
   field: {
     h: 12,
     borderRadius: 10,
-    border: '2px solid',
+    borderColor: 'black',
+    borderWidth: '2px',
     fontSize: 'md',
     fontFamily: 'Inter',
+    backgroundColor: 'white',
 
-    _light: {
-      backgroundColor: '#F8F8F8',
-      borderColor: '#e3e3e4',
-      _focusVisible: {
-        border: '2px solid',
-        borderColor: 'brand.900'
-      },
-      _invalid: {
-        border: '2px solid',
-        borderColor: 'invalid'
-      },
-      _placeholder: {
-        color: 'gray.500'
-      }
+    _focusVisible: {
+      borderColor: 'brand.900',
+      backgroundColor: 'gray.100'
+    },
+    _invalid: {
+      borderColor: 'invalid'
+    },
+    _placeholder: {
+      color: 'gray.500'
     }
   }
 })
