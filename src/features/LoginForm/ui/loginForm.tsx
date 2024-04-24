@@ -19,7 +19,7 @@ import { TextDivider } from '@/shared'
 import { ICONS } from '@/shared'
 import { useAuth } from '@/shared'
 
-export const SignInForm: React.FC = () => {
+export const LoginForm: React.FC = () => {
   const { loginAndAuthenticate, authenticateWithGoogle, isLoading } = useAuth()
 
   return (
