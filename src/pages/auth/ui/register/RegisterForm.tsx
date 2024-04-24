@@ -13,9 +13,9 @@ import {
 import { Formik, Field } from 'formik'
 import { motion } from 'framer-motion'
 
+import { ICONS } from '@/shared/assets/_index'
 import PasswordInput from '@/shared/ui/PasswordInput'
 import TextDivider from '@/shared/ui/TextDivider'
-import { ICONS } from '@/shared/assets/_index'
 
 export const RegisterForm: React.FC = () => {
   return (

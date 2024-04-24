@@ -1,13 +1,12 @@
 import { useState } from 'react'
 
-import { AuthLayout } from '@/app/layouts/AuthLayout'
-import { LoginForm } from './login/LoginForm'
-import { RegisterForm } from './register/RegisterForm'
-import { LoginContent } from './login/LoginContent'
-import { RegisterContent } from './register/RegisterContent'
-import { BottomFormText } from './BottomFormText'
-
 import { AUTH_FORMS } from '../model/types'
+import { BottomFormText } from './BottomFormText'
+import { LoginContent } from './login/LoginContent'
+import { LoginForm } from './login/LoginForm'
+import { RegisterContent } from './register/RegisterContent'
+import { RegisterForm } from './register/RegisterForm'
+import { AuthLayout } from '@/app/layouts/AuthLayout'
 
 export const AuthPage: React.FC = () => {
   const [authFormActive, setAuthFormActive] = useState(AUTH_FORMS.REGISTER)
