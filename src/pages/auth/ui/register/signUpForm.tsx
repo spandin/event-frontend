@@ -13,11 +13,14 @@ import {
 import { Formik, Field } from 'formik'
 import { motion } from 'framer-motion'
 
-import { ICONS } from '@/shared/assets/_index'
-import PasswordInput from '@/shared/ui/passwordInput'
-import TextDivider from '@/shared/ui/textDivider'
+import { ICONS } from '@/shared'
+import { PasswordInput } from '@/shared'
+import { TextDivider } from '@/shared'
+import { useAuth } from '@/shared'
 
 export const SignUpForm: React.FC = () => {
+  const { registerAndAuthenticate, authenticateWithGoogle, isLoading } = useAuth()
+
   return (
     <motion.div
       key="signUp"
@@ -32,13 +35,12 @@ export const SignUpForm: React.FC = () => {
           email: '',
           password: ''
         }}
-        onSubmit={(values, actions) => {
-          console.log(values)
-
-          actions.setSubmitting(true)
+        onSubmit={(values) => {
+          const { email, password } = values
+          registerAndAuthenticate(email, password)
         }}
       >
-        {({ handleSubmit, errors, touched, isSubmitting }) => (
+        {({ handleSubmit, errors, touched }) => (
           <chakra.form onSubmit={handleSubmit} noValidate w={{ base: '100%', lg: '80%' }}>
             <VStack spacing={8}>
               <VStack spacing={0} align={'center'}>
@@ -97,9 +99,10 @@ export const SignUpForm: React.FC = () => {
                   w={'full'}
                   mt={6}
                   variant={'solid'}
-                  isLoading={isSubmitting}
+                  isLoading={isLoading}
                   loadingText="Регистрация"
                   type="submit"
+                  isDisabled={isLoading}
                 >
                   Зарегистрироваться
                 </Button>
@@ -109,10 +112,12 @@ export const SignUpForm: React.FC = () => {
 
               <VStack gap={4} w={'full'}>
                 <Button
+                  onClick={authenticateWithGoogle}
                   w={'full'}
                   variant={'outline'}
                   whiteSpace={'wrap'}
                   leftIcon={<Image w={'20px'} h={'20px'} src={ICONS.GOOGLE_LOGO} />}
+                  isDisabled={isLoading}
                 >
                   Зарегистрироваться через Google
                 </Button>
@@ -121,6 +126,7 @@ export const SignUpForm: React.FC = () => {
                   variant={'outline'}
                   whiteSpace={'wrap'}
                   leftIcon={<Image w={'20px'} h={'32px'} src={ICONS.APPLE_LOGO} />}
+                  isDisabled={isLoading}
                 >
                   Зарегистрироваться через Apple
                 </Button>
