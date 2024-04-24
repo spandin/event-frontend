@@ -2,11 +2,11 @@ import { useState } from 'react'
 
 import { AUTH_FORMS } from '../model/types'
 import { BottomFormText } from './bottomText'
-import { AuthLayout } from '@/app/layouts/authPageLayout'
-import { SignUpForm } from './register/signUpForm'
+import { AuthLayout } from '@/app/layouts/authLayout'
+import { RegisterForm } from '@/features'
 import { SignUpContent } from './register/signUpContent'
 import { SignInContent } from './login/signInContent'
-import { SignInForm } from './login/singInForm'
+import { SignInForm } from '../../../features/LoginForm/ui/loginForm'
 
 export const AuthPage: React.FC = () => {
   const [authFormActive, setAuthFormActive] = useState(AUTH_FORMS.REGISTER)
@@ -18,7 +18,7 @@ export const AuthPage: React.FC = () => {
   }
   return (
     <AuthLayout
-      form={authFormActive === AUTH_FORMS.LOGIN ? <SignInForm /> : <SignUpForm />}
+      form={authFormActive === AUTH_FORMS.LOGIN ? <SignInForm /> : <RegisterForm />}
       bottomFormText={
         authFormActive === AUTH_FORMS.LOGIN ? (
           <BottomFormText

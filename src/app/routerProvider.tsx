@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { AuthPage } from '@/pages/auth'
+import { AuthPage } from '@/pages'
 import RootLayout from './layouts/rootLayout'
 import { PrivateRoute } from '@/shared'
 import { GuestRoute } from '@/shared'
