@@ -4,7 +4,7 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
 interface PasswordInputProps extends InputProps {}
 
-const PasswordInput = (props: PasswordInputProps) => {
+export const PasswordInput = (props: PasswordInputProps) => {
   const [show, setShow] = useState(false)
   const handleClick = () => setShow(!show)
 
@@ -19,5 +19,3 @@ const PasswordInput = (props: PasswordInputProps) => {
     </InputGroup>
   )
 }
-
-export default PasswordInput

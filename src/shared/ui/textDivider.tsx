@@ -5,7 +5,7 @@ interface TextDividerProps {
   children: ReactNode
 }
 
-const TextDivider: React.FC<TextDividerProps> = ({ children }) => {
+export const TextDivider: React.FC<TextDividerProps> = ({ children }) => {
   return (
     <Box position={'relative'} w={'full'}>
       <Divider variant={'thick'} />
@@ -17,5 +17,3 @@ const TextDivider: React.FC<TextDividerProps> = ({ children }) => {
     </Box>
   )
 }
-
-export default TextDivider
