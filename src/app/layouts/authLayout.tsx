@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { Grid, Flex, HStack, Heading, Image } from '@chakra-ui/react'
 
-import { ICONS } from '@/shared/assets/_index'
+import { ICONS } from '@/shared/assets'
 
 interface Props {
   form: ReactNode
