@@ -9,7 +9,7 @@ interface Props {
   content: ReactNode
 }
 
-export const AuthLayout: React.FC<Props> = ({ form, bottomFormText, content }) => {
+export const AuthLayout = ({ form, bottomFormText, content }: Props) => {
   return (
     <Grid templateColumns={{ base: '1fr', xl: '40% 1fr' }} maxH={'100dvh'} h={'100dvh'}>
       <Flex
