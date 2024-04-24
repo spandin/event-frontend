@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom'
-
-import { AuthPage } from '@/pages/auth/_index'
+import { AuthPage } from '@/pages/auth'
 import RootLayout from './layouts/rootLayout'
+import { PrivateRoute } from '@/shared'
+import { GuestRoute } from '@/shared'
 
 export const router = createBrowserRouter([
   {
@@ -10,9 +11,20 @@ export const router = createBrowserRouter([
     errorElement: <div>Error</div>,
     children: [
       {
-        path: 'auth/',
-        element: <AuthPage />,
-        errorElement: <div>Error</div>
+        path: '/',
+        element: (
+          <PrivateRoute>
+            <div>App</div>
+          </PrivateRoute>
+        )
+      },
+      {
+        path: '/auth',
+        element: (
+          <GuestRoute>
+            <AuthPage />
+          </GuestRoute>
+        )
       }
     ]
   }
