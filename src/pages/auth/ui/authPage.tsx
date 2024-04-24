@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { AUTH_FORMS } from '../model/types'
-import { BottomFormText } from './bottomFormText'
+import { BottomFormText } from './bottomText'
 import { AuthLayout } from '@/app/layouts/authPageLayout'
 import { SignUpForm } from './register/signUpForm'
 import { SignUpContent } from './register/signUpContent'
