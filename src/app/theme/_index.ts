@@ -2,12 +2,26 @@ import { extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 import type { StyleFunctionProps } from '@chakra-ui/styled-system'
 
-import colors from './colors'
 import { buttonTheme, dividerTheme, headingTheme, inputTheme } from './components/_index'
 
 const config = {
   initialColorMode: 'light',
   useSystemColorMode: false
+}
+
+export const colors = {
+  brand: {
+    900: '#4329B5',
+    800: '#5841bd',
+    700: '#6d59c5',
+    600: '#8270ce',
+    500: '#9788d6',
+    400: '#aba0de',
+    300: '#c0b8e6',
+    200: '#d5cfef',
+    100: '#eae7f7'
+  },
+  invalid: '#FC8181'
 }
 
 const theme = extendTheme({
@@ -19,6 +33,10 @@ const theme = extendTheme({
       '*': {
         WebkitTapHighlightColor: 'transparent'
       },
+      '::selection': {
+        background: 'brand.100',
+        color: 'black'
+      },
       body: {
         color: mode('black.900', 'white.900')(props),
         bg: mode('white', 'dark.900')(props)
@@ -29,7 +47,7 @@ const theme = extendTheme({
   components: {
     Text: {
       baseStyle: {
-        fontWeight: 300
+        fontWeight: 400
       }
     },
     Input: inputTheme,
@@ -39,7 +57,7 @@ const theme = extendTheme({
     FormLabel: {
       baseStyle: {
         fontSize: 'md',
-        fontWeight: 500,
+        fontWeight: 600,
         lineHeight: 1
       }
     }
