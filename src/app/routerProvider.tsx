@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 
 import { AuthPage } from '@/pages/auth/_index'
-import RootLayout from './layouts/RootLayout'
+import RootLayout from './layouts/rootLayout'
 
 export const router = createBrowserRouter([
   {

@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   chakra,
   FormControl,
@@ -8,21 +7,20 @@ import {
   Heading,
   Image,
   Input,
-  Link,
   Text,
   VStack
 } from '@chakra-ui/react'
 import { Formik, Field } from 'formik'
 import { motion } from 'framer-motion'
 
-import PasswordInput from '@/shared/ui/PasswordInput'
-import TextDivider from '@/shared/ui/TextDivider'
 import { ICONS } from '@/shared/assets/_index'
+import PasswordInput from '@/shared/ui/passwordInput'
+import TextDivider from '@/shared/ui/textDivider'
 
-export const LoginForm: React.FC = () => {
+export const SignUpForm: React.FC = () => {
   return (
     <motion.div
-      key="login"
+      key="signUp"
       initial={{ opacity: 0, width: '100%' }}
       animate={{ opacity: 1, width: '100%' }}
       exit={{ opacity: 0 }}
@@ -44,7 +42,7 @@ export const LoginForm: React.FC = () => {
           <chakra.form onSubmit={handleSubmit} noValidate w={{ base: '100%', lg: '80%' }}>
             <VStack spacing={8}>
               <VStack spacing={0} align={'center'}>
-                <Heading variant={'h2'}>Войдите в аккаунт</Heading>
+                <Heading variant={'h2'}>Зарегистрируйте аккаунт</Heading>
                 <Text color={'gray.500'}>используя email и пароль</Text>
               </VStack>
 
@@ -95,21 +93,15 @@ export const LoginForm: React.FC = () => {
                   <FormErrorMessage fontSize={'sm'}>{errors.password}</FormErrorMessage>
                 </FormControl>
 
-                <Box textAlign={'end'} w={'full'}>
-                  <Link href={'/recovery-password/'} fontSize={'sm'} color={'gray.500'}>
-                    Забыли пароль?
-                  </Link>
-                </Box>
-
                 <Button
                   w={'full'}
-                  mt={1}
+                  mt={6}
                   variant={'solid'}
                   isLoading={isSubmitting}
-                  loadingText="Вход"
+                  loadingText="Регистрация"
                   type="submit"
                 >
-                  Войти
+                  Зарегистрироваться
                 </Button>
               </VStack>
 
@@ -122,7 +114,7 @@ export const LoginForm: React.FC = () => {
                   whiteSpace={'wrap'}
                   leftIcon={<Image w={'20px'} h={'20px'} src={ICONS.GOOGLE_LOGO} />}
                 >
-                  Войти через Google
+                  Зарегистрироваться через Google
                 </Button>
                 <Button
                   w={'full'}
@@ -130,7 +122,7 @@ export const LoginForm: React.FC = () => {
                   whiteSpace={'wrap'}
                   leftIcon={<Image w={'20px'} h={'32px'} src={ICONS.APPLE_LOGO} />}
                 >
-                  Войти через Apple
+                  Зарегистрироваться через Apple
                 </Button>
               </VStack>
             </VStack>
