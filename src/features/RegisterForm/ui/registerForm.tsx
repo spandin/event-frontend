@@ -18,7 +18,7 @@ import { PasswordInput } from '@/shared'
 import { TextDivider } from '@/shared'
 import { useAuth } from '@/shared'
 
-export const SignUpForm: React.FC = () => {
+export const RegisterForm: React.FC = () => {
   const { registerAndAuthenticate, authenticateWithGoogle, isLoading } = useAuth()
 
   return (
