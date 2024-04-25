@@ -7,10 +7,12 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
   const { authenticate, isLoading } = useAuth()
 
   useEffect(() => {
-    if (!isInitialized.current) {
+    const initialize = async () => {
+      await authenticate()
       isInitialized.current = true
-      authenticate()
     }
+
+    initialize()
   }, [])
 
   if (isLoading && !isInitialized.current) {
