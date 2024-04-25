@@ -4,6 +4,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:@typescript-eslint/recommended',
@@ -13,6 +14,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {
-    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }]
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    'no-empty': ['error', { allowEmptyCatch: true }]
   }
 }
