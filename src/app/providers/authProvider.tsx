@@ -1,4 +1,4 @@
-import { useAuth } from '@/shared'
+import { useAuth } from '@/shared/hooks'
 import { Center, Spinner } from '@chakra-ui/react'
 import { PropsWithChildren, useEffect, useRef } from 'react'
 

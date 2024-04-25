@@ -1,12 +1,11 @@
 import { useState } from 'react'
-
 import { AUTH_FORMS } from '../model/types'
 import { BottomFormText } from './bottomText'
 import { AuthLayout } from './authLayout'
-import { RegisterForm } from '@/features'
 import { RegisterContent } from './registerContent'
 import { LoginContent } from './loginContent'
-import { LoginForm } from '@/features'
+import { AuthFormWithProviders } from '@/widgets/authFormWithProviders'
+import { LoginForm, RegisterForm } from '@/features/AuthByEmail'
 
 export const AuthPage: React.FC = () => {
   const [authFormActive, setAuthFormActive] = useState(AUTH_FORMS.REGISTER)
@@ -18,7 +17,6 @@ export const AuthPage: React.FC = () => {
   }
   return (
     <AuthLayout
-      form={authFormActive === AUTH_FORMS.LOGIN ? <LoginForm /> : <RegisterForm />}
       bottomFormText={
         authFormActive === AUTH_FORMS.LOGIN ? (
           <BottomFormText
@@ -35,6 +33,10 @@ export const AuthPage: React.FC = () => {
         )
       }
       content={authFormActive === AUTH_FORMS.LOGIN ? <LoginContent /> : <RegisterContent />}
-    />
+    >
+      <AuthFormWithProviders
+        form={authFormActive === AUTH_FORMS.LOGIN ? <LoginForm /> : <RegisterForm />}
+      />
+    </AuthLayout>
   )
 }

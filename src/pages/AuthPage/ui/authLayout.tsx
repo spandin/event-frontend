@@ -4,12 +4,12 @@ import { Grid, Flex, HStack, Heading, Image } from '@chakra-ui/react'
 import { ICONS } from '@/shared/assets'
 
 interface Props {
-  form: ReactNode
+  children: ReactNode
   bottomFormText: ReactNode
   content: ReactNode
 }
 
-export const AuthLayout = ({ form, bottomFormText, content }: Props) => {
+export const AuthLayout = ({ children, bottomFormText, content }: Props) => {
   return (
     <Grid templateColumns={{ base: '1fr', xl: '40% 1fr' }} maxH={'100dvh'} h={'100dvh'}>
       <Flex
@@ -24,7 +24,7 @@ export const AuthLayout = ({ form, bottomFormText, content }: Props) => {
           <Heading variant={'h3'}>Event App</Heading>
         </HStack>
 
-        {form}
+        {children}
 
         {bottomFormText}
       </Flex>

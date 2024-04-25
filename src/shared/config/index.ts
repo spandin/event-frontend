@@ -1,1 +1,1 @@
-export { BASE_URL } from './baseUrl'
+export const BASE_URL = 'https://event-backend-miq1.onrender.com'

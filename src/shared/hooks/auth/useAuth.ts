@@ -1,10 +1,8 @@
-import { useAuthStore } from '@/app/store/authStore'
+import { useAuthStore } from '@/shared/store/authStore'
 import { useNavigate } from 'react-router-dom'
 import { useAuthError } from './useAuthError'
-import { getUser } from '../../api'
-import { register } from '../../api'
-import { login } from '../../api'
 import { BASE_URL } from '../../config'
+import { getUser, login, register, logout } from '@/shared/api/auth'
 
 export const useAuth = () => {
   const user = useAuthStore((state) => state.user)
@@ -64,7 +62,7 @@ export const useAuth = () => {
     window.location.href = `${BASE_URL}/auth/google`
   }
 
-  const logout = async () => {
+  const logoutUser = async () => {
     await logout()
     navigate('/')
   }
@@ -74,7 +72,7 @@ export const useAuth = () => {
     authenticateWithGoogle,
     registerAndAuthenticate,
     loginAndAuthenticate,
-    logout,
+    logoutUser,
     user,
     isLoading,
     isAuthenticated

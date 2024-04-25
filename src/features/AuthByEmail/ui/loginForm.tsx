@@ -1,3 +1,5 @@
+import { useAuth } from '@/shared/hooks'
+import { PasswordInput } from '@/shared/ui'
 import {
   Box,
   Button,
@@ -6,7 +8,6 @@ import {
   FormErrorMessage,
   FormLabel,
   Heading,
-  Image,
   Input,
   Link,
   Text,
@@ -14,13 +15,9 @@ import {
 } from '@chakra-ui/react'
 import { Formik, Field } from 'formik'
 import { motion } from 'framer-motion'
-import { PasswordInput } from '@/shared'
-import { TextDivider } from '@/shared'
-import { ICONS } from '@/shared'
-import { useAuth } from '@/shared'
 
 export const LoginForm: React.FC = () => {
-  const { loginAndAuthenticate, authenticateWithGoogle, isLoading } = useAuth()
+  const { loginAndAuthenticate, isLoading } = useAuth()
 
   return (
     <motion.div
@@ -112,30 +109,6 @@ export const LoginForm: React.FC = () => {
                   disabled={isLoading}
                 >
                   Войти
-                </Button>
-              </VStack>
-
-              <TextDivider>или</TextDivider>
-
-              <VStack gap={4} w={'full'}>
-                <Button
-                  onClick={authenticateWithGoogle}
-                  w={'full'}
-                  variant={'outline'}
-                  whiteSpace={'wrap'}
-                  leftIcon={<Image w={'20px'} h={'20px'} src={ICONS.GOOGLE_LOGO} />}
-                  isDisabled={isLoading}
-                >
-                  Войти через Google
-                </Button>
-                <Button
-                  w={'full'}
-                  variant={'outline'}
-                  whiteSpace={'wrap'}
-                  leftIcon={<Image w={'20px'} h={'32px'} src={ICONS.APPLE_LOGO} />}
-                  isDisabled={isLoading}
-                >
-                  Войти через Apple
                 </Button>
               </VStack>
             </VStack>

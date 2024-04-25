@@ -1,3 +1,5 @@
+import { useAuth } from '@/shared/hooks'
+import { PasswordInput } from '@/shared/ui'
 import {
   Button,
   chakra,
@@ -5,7 +7,6 @@ import {
   FormErrorMessage,
   FormLabel,
   Heading,
-  Image,
   Input,
   Text,
   VStack
@@ -13,13 +14,8 @@ import {
 import { Formik, Field } from 'formik'
 import { motion } from 'framer-motion'
 
-import { ICONS } from '@/shared'
-import { PasswordInput } from '@/shared'
-import { TextDivider } from '@/shared'
-import { useAuth } from '@/shared'
-
 export const RegisterForm: React.FC = () => {
-  const { registerAndAuthenticate, authenticateWithGoogle, isLoading } = useAuth()
+  const { registerAndAuthenticate, isLoading } = useAuth()
 
   return (
     <motion.div
@@ -105,30 +101,6 @@ export const RegisterForm: React.FC = () => {
                   isDisabled={isLoading}
                 >
                   Зарегистрироваться
-                </Button>
-              </VStack>
-
-              <TextDivider>или</TextDivider>
-
-              <VStack gap={4} w={'full'}>
-                <Button
-                  onClick={authenticateWithGoogle}
-                  w={'full'}
-                  variant={'outline'}
-                  whiteSpace={'wrap'}
-                  leftIcon={<Image w={'20px'} h={'20px'} src={ICONS.GOOGLE_LOGO} />}
-                  isDisabled={isLoading}
-                >
-                  Зарегистрироваться через Google
-                </Button>
-                <Button
-                  w={'full'}
-                  variant={'outline'}
-                  whiteSpace={'wrap'}
-                  leftIcon={<Image w={'20px'} h={'32px'} src={ICONS.APPLE_LOGO} />}
-                  isDisabled={isLoading}
-                >
-                  Зарегистрироваться через Apple
                 </Button>
               </VStack>
             </VStack>
