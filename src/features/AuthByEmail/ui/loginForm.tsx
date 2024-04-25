@@ -1,3 +1,5 @@
+import { useAuth } from '@/shared/hooks'
+import { PasswordInput } from '@/shared/ui'
 import {
   Box,
   Button,
@@ -6,7 +8,6 @@ import {
   FormErrorMessage,
   FormLabel,
   Heading,
-  Image,
   Input,
   Link,
   Text,
@@ -14,11 +15,10 @@ import {
 } from '@chakra-ui/react'
 import { Formik, Field } from 'formik'
 import { motion } from 'framer-motion'
-import PasswordInput from '@/shared/ui/passwordInput'
-import TextDivider from '@/shared/ui/textDivider'
-import { ICONS } from '@/shared/assets/_index'
 
-export const SignInForm: React.FC = () => {
+export const LoginForm: React.FC = () => {
+  const { loginAndAuthenticate, isLoading } = useAuth()
+
   return (
     <motion.div
       key="signIn"
@@ -33,13 +33,12 @@ export const SignInForm: React.FC = () => {
           email: '',
           password: ''
         }}
-        onSubmit={(values, actions) => {
-          console.log(values)
-
-          actions.setSubmitting(true)
+        onSubmit={(values) => {
+          const { email, password } = values
+          loginAndAuthenticate(email, password)
         }}
       >
-        {({ handleSubmit, errors, touched, isSubmitting }) => (
+        {({ handleSubmit, errors, touched }) => (
           <chakra.form onSubmit={handleSubmit} noValidate w={{ base: '100%', lg: '80%' }}>
             <VStack spacing={8}>
               <VStack spacing={0} align={'center'}>
@@ -95,7 +94,7 @@ export const SignInForm: React.FC = () => {
                 </FormControl>
 
                 <Box textAlign={'end'} w={'full'}>
-                  <Link href={'/recovery-password/'} fontSize={'sm'} color={'gray.500'}>
+                  <Link fontSize={'sm'} color={'gray.500'}>
                     Забыли пароль?
                   </Link>
                 </Box>
@@ -104,32 +103,12 @@ export const SignInForm: React.FC = () => {
                   w={'full'}
                   mt={1}
                   variant={'solid'}
-                  isLoading={isSubmitting}
+                  isLoading={isLoading}
                   loadingText="Вход"
                   type="submit"
+                  disabled={isLoading}
                 >
                   Войти
-                </Button>
-              </VStack>
-
-              <TextDivider>или</TextDivider>
-
-              <VStack gap={4} w={'full'}>
-                <Button
-                  w={'full'}
-                  variant={'outline'}
-                  whiteSpace={'wrap'}
-                  leftIcon={<Image w={'20px'} h={'20px'} src={ICONS.GOOGLE_LOGO} />}
-                >
-                  Войти через Google
-                </Button>
-                <Button
-                  w={'full'}
-                  variant={'outline'}
-                  whiteSpace={'wrap'}
-                  leftIcon={<Image w={'20px'} h={'32px'} src={ICONS.APPLE_LOGO} />}
-                >
-                  Войти через Apple
                 </Button>
               </VStack>
             </VStack>

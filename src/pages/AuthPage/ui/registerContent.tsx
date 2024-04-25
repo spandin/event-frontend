@@ -1,7 +1,7 @@
 import { Text } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
-export const SignUpContent: React.FC = () => {
+export const RegisterContent: React.FC = () => {
   return (
     <motion.div
       key="signUpContent"

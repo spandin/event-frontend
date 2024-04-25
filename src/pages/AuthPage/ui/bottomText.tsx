@@ -7,7 +7,7 @@ interface Props {
   onLinkClick: () => void
 }
 
-export const BottomFormText: React.FC<Props> = ({ text, linkText, onLinkClick }) => {
+export const BottomFormText: React.FC<Props> = ({ text, linkText, onLinkClick }: Props) => {
   return (
     <motion.div
       key={text}
