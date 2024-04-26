@@ -3,7 +3,11 @@ import { PropsWithChildren } from 'react'
 import { useAuth } from '../hooks'
 
 export const GuestRoute = ({ children }: PropsWithChildren) => {
-  const { isAuthenticated } = useAuth()
+  const { isAuthenticated, isLoading } = useAuth()
+
+  if (isLoading) {
+    return
+  }
 
   if (isAuthenticated) {
     return <Navigate to={'/'} />
