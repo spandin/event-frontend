@@ -2,7 +2,6 @@ import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 const outline = defineStyle({
   h: 12,
-  px: 4,
   borderRadius: 10,
   borderColor: 'black',
   borderWidth: '2px',
@@ -17,7 +16,6 @@ const outline = defineStyle({
 
 const solid = defineStyle({
   h: 12,
-  px: 4,
   borderRadius: 10,
   fontSize: 'md',
   fontWeight: 600,
@@ -40,6 +38,18 @@ const solid = defineStyle({
   }
 })
 
+const circle = defineStyle({
+  minW: 10,
+  minH: 10,
+  p: 0,
+  rounded: 'full',
+  borderWidth: '2px',
+  borderColor: 'lightStroke',
+
+  _hover: { backgroundColor: 'lightHover' }
+})
+
 export const buttonTheme = defineStyleConfig({
-  variants: { outline, solid }
+  defaultProps: {},
+  variants: { outline, solid, circle }
 })

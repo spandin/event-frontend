@@ -20,7 +20,7 @@ const h3 = defineStyle({
 
 const h4 = defineStyle({
   fontSize: 'xl',
-  fontWeight: 400,
+  fontWeight: 500,
   letterSpacing: '-0.02em'
 })
 
