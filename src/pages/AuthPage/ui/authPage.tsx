@@ -8,7 +8,7 @@ import { AuthFormWithProviders } from '@/widgets/authFormWithProviders'
 import { LoginForm, RegisterForm } from '@/features/AuthByEmail'
 
 export const AuthPage: React.FC = () => {
-  const [authFormActive, setAuthFormActive] = useState(AUTH_FORMS.REGISTER)
+  const [authFormActive, setAuthFormActive] = useState(AUTH_FORMS.LOGIN)
 
   const handleFormToggle = () => {
     setAuthFormActive((prevForm) =>
