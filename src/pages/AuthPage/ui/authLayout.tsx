@@ -11,7 +11,7 @@ interface Props {
 
 export const AuthLayout = ({ children, bottomFormText, content }: Props) => {
   return (
-    <Grid templateColumns={{ base: '1fr', xl: '40% 1fr' }} maxH={'100dvh'} h={'100dvh'}>
+    <Grid templateColumns={{ base: '1fr', xl: '40% 1fr' }} h={'100dvh'}>
       <Flex
         direction={'column'}
         justify={'space-between'}
