@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
   if (isLoading && !isInitialized) {
     return (
       <Center h="100dvh">
-        <Spinner size="xl" />
+        <Spinner size="lg" thickness="3px" />
       </Center>
     )
   }
