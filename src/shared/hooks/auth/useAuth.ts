@@ -1,8 +1,8 @@
 import { useAuthStore } from '@/shared/store/authStore'
 import { useNavigate } from 'react-router-dom'
 import { useAuthError } from './useAuthError'
-import { BASE_URL } from '../../config'
 import { getUser, login, register, logout } from '@/shared/api/auth'
+import { BASE_URL } from '@/shared/config'
 
 export const useAuth = () => {
   const user = useAuthStore((state) => state.user)

@@ -7,7 +7,7 @@ interface TextDividerProps {
 
 export const TextDivider: React.FC<TextDividerProps> = ({ children }) => {
   return (
-    <Box position={'relative'} w={'full'}>
+    <Box position={'relative'} w={'70%'}>
       <Divider variant={'thick'} />
       <AbsoluteCenter bg={'white'} p={2} top={'-1px'}>
         <Text color={'gray.500'} fontSize={'md'} whiteSpace={'nowrap'}>
