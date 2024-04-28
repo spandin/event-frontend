@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import RootLayout from './layouts/rootLayout'
 import { AuthPage } from '@/pages/AuthPage'
-
+import { GuestRoute, PrivateRoute } from '@/shared/router'
 import { HomePage } from '@/pages/HomePage'
 import { EventPage } from '@/pages/EventsPage'
 
@@ -13,19 +13,35 @@ export const router = createBrowserRouter([
     children: [
       {
         path: 'auth/',
-        element: <AuthPage />
+        element: (
+          <GuestRoute>
+            <AuthPage />
+          </GuestRoute>
+        )
       },
       {
         path: '/',
-        element: <HomePage />
+        element: (
+          <PrivateRoute>
+            <HomePage />
+          </PrivateRoute>
+        )
       },
       {
         path: '/events',
-        element: <EventPage />
+        element: (
+          <PrivateRoute>
+            <EventPage />
+          </PrivateRoute>
+        )
       },
       {
         path: '/events/:id',
-        element: <div>Events Id</div>
+        element: (
+          <PrivateRoute>
+            <div>Events Id</div>
+          </PrivateRoute>
+        )
       },
       {
         path: '/events/create',
