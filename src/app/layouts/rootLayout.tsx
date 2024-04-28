@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import { Grid, GridItem } from '@chakra-ui/react'
+import { chakra, Flex } from '@chakra-ui/react'
 import { Navbar } from '@/widgets/navBar'
 import { useAuth } from '@/shared/hooks'
 import { AuthProvider } from '../providers/authProvider'
@@ -17,31 +17,33 @@ const RootLayout = () => {
 
   return (
     <AuthProvider>
-      <Grid
-        templateAreas={{
-          base: `"main" "nav"`,
-          lg: `"nav main"
-              "nav main"`
-        }}
-        gridTemplateRows={{ base: '1fr 80px', lg: 'auto 1fr' }}
-        gridTemplateColumns={{ base: '1fr', lg: '80px 1fr' }}
-        h={'100dvh'}
+      <Flex
+        maxH={'100dvh'}
+        direction={{ base: 'column', lg: 'row-reverse' }}
+        justify={{ base: 'flex-end' }}
+        align={{ base: 'flex-start' }}
       >
-        <GridItem area={'nav'}>
-          <Navbar />
-        </GridItem>
-
-        <GridItem
-          area={'main'}
-          maxH={'100dvh'}
-          maxW={'30%'}
-          py={{ base: 2, lg: 8 }}
-          borderRightWidth={'2px'}
+        <chakra.main
+          h={'100dvh'}
+          w={{ base: '100dvw', lg: '500px' }}
+          pt={{ base: 6, lg: 8 }}
+          borderRightWidth={{ base: '0px', lg: '2px' }}
           borderRightColor={'lightStroke'}
         >
           <Outlet />
-        </GridItem>
-      </Grid>
+        </chakra.main>
+
+        <Flex
+          w={{ base: 'full', lg: 'auto' }}
+          direction={{ base: 'row', lg: 'column' }}
+          position={{ base: 'absolute', lg: 'initial' }}
+          bottom={0}
+          py={{ base: 4, lg: 8 }}
+          px={{ base: 4 }}
+        >
+          <Navbar />
+        </Flex>
+      </Flex>
     </AuthProvider>
   )
 }

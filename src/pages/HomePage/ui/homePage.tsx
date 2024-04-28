@@ -1,4 +1,5 @@
 import { CircleButton } from '@/shared/ui'
+import { EventsList } from '@/widgets/eventsList'
 import { ScrollableContactsList } from '@/widgets/ScrollableContactsList'
 import { Avatar, Heading, HStack, VStack } from '@chakra-ui/react'
 import { FiBell, FiSettings } from 'react-icons/fi'
@@ -24,8 +25,10 @@ export const HomePage = () => {
           <Heading variant={'h2'}>{userName}</Heading>
         </VStack>
 
-        <VStack w={'full'} borderWidth={2} borderColor={'darkBrand'} rounded={20}>
+        <VStack w={'full'} gap={4} p={4} borderWidth={2} borderColor={'lightStroke'} rounded={20}>
           <ScrollableContactsList />
+
+          <EventsList />
         </VStack>
       </VStack>
     </VStack>

@@ -8,7 +8,7 @@ interface Props {
 export const CircleButton = ({ icon }: Props) => {
   return (
     <Button variant={'circle'}>
-      <Icon as={icon} />
+      <Icon as={icon} strokeWidth={'3px'} />
     </Button>
   )
 }

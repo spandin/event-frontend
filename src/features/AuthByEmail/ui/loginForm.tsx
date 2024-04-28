@@ -43,7 +43,9 @@ export const LoginForm: React.FC = () => {
             <VStack spacing={8}>
               <VStack spacing={0} align={'center'}>
                 <Heading variant={'h2'}>Войдите в аккаунт</Heading>
-                <Text color={'gray.500'}>используя email и пароль</Text>
+                <Text color={'gray.500'} fontSize={'md'}>
+                  используя email и пароль
+                </Text>
               </VStack>
 
               <VStack w={'full'} spacing={4}>

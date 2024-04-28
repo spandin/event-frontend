@@ -41,7 +41,9 @@ export const RegisterForm: React.FC = () => {
             <VStack spacing={8}>
               <VStack spacing={0} align={'center'}>
                 <Heading variant={'h2'}>Зарегистрируйте аккаунт</Heading>
-                <Text color={'gray.500'}>используя email и пароль</Text>
+                <Text color={'gray.500'} fontSize={'md'}>
+                  используя email и пароль
+                </Text>
               </VStack>
 
               <VStack w={'full'} spacing={4}>

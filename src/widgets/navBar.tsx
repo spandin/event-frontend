@@ -1,29 +1,29 @@
 import { FiCalendar, FiHome, FiPieChart, FiPlusCircle, FiSettings, FiUsers } from 'react-icons/fi'
-import { Flex, Image } from '@chakra-ui/react'
+import { chakra, Flex, Image } from '@chakra-ui/react'
 import { NavIcon } from '@/shared/ui'
 import { ICONS } from '@/shared/assets'
 
 export function Navbar() {
   return (
-    <Flex
+    <chakra.nav
       h={'full'}
       w={'full'}
-      direction={{ base: 'row', lg: 'column' }}
-      align={'center'}
-      justify={{ base: 'center', lg: 'flex-start' }}
-      py={{ base: 2, lg: 8 }}
-      px={{ base: 4 }}
+      display={'flex'}
+      flexDirection={{ base: 'row', lg: 'column' }}
+      alignItems={'center'}
+      justifyContent={{ base: 'center', lg: 'flex-start' }}
       gap={8}
     >
       <Image src={ICONS.APP_LOGO} boxSize={10} display={{ base: 'none', lg: 'flex' }} />
 
       <Flex
+        w={'full'}
         direction={{ base: 'row', lg: 'column' }}
         align={'center'}
         justify={{ base: 'center', lg: 'flex-start' }}
         py={{ base: 2, lg: 2 }}
-        gap={8}
         px={{ base: 4, lg: 2 }}
+        gap={8}
         bg={'brand.900'}
         rounded={'10px'}
       >
@@ -34,6 +34,6 @@ export function Navbar() {
         <NavIcon to="/statistics" icon={FiPieChart} />
         <NavIcon to="/settings" icon={FiSettings} display={{ base: 'none', lg: 'flex' }} />
       </Flex>
-    </Flex>
+    </chakra.nav>
   )
 }
