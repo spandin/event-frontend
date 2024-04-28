@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "https://event-backend-bk8p.onrender.com/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
