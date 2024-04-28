@@ -1,20 +1,20 @@
 import { CircleButton } from '@/shared/ui'
-import { EventsList } from '@/widgets/eventsList'
-import { ScrollableContactsList } from '@/widgets/ScrollableContactsList'
+import { EventsList } from '@/pages/HomePage/ui/eventsList'
 import { Avatar, Heading, HStack, VStack } from '@chakra-ui/react'
 import { FiBell, FiSettings } from 'react-icons/fi'
+import { ScrollableContactsList } from './ScrollableContactsList'
 
 export const HomePage = () => {
   const userName = 'John Wick'
   return (
-    <VStack px={6} gap={4}>
-      <HStack w={'full'} justify={'space-between'}>
+    <VStack gap={0}>
+      <HStack w={'full'} justify={'space-between'} py={4}>
         <CircleButton icon={FiBell} />
         <CircleButton icon={FiSettings} />
       </HStack>
 
-      <VStack maxH={'full'} w={'full'}>
-        <VStack py={4} gap={4}>
+      <VStack w={'full'} overflowY={'scroll'} py={4} gap={4}>
+        <VStack gap={4}>
           <Avatar
             boxSize={36}
             name={userName}
@@ -27,7 +27,6 @@ export const HomePage = () => {
 
         <VStack w={'full'} gap={4} p={4} borderWidth={2} borderColor={'lightStroke'} rounded={20}>
           <ScrollableContactsList />
-
           <EventsList />
         </VStack>
       </VStack>

@@ -35,7 +35,7 @@ export const NavIcon = ({ to, icon, size, display }: Props) => {
       boxSize={size || 9}
       rounded={'10px'}
       background={isActive(`${to}`) ? 'darkBrand' : 'transparent'}
-      color={isActive(`${to}`) ? 'lightHover' : 'white'}
+      color={isActive(`${to}`) ? 'lightHover' : 'darkBrand'}
       to={to}
       unstable_viewTransition
     >
