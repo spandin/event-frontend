@@ -2,12 +2,13 @@ import { Outlet } from 'react-router-dom'
 import { chakra, Flex } from '@chakra-ui/react'
 import { Navbar } from '@/widgets/navBar'
 import { useAuth } from '@/shared/hooks'
+import { AuthPage } from '@/pages/AuthPage'
 
 const RootLayout = () => {
   const { isAuthenticated } = useAuth()
 
   if (!isAuthenticated) {
-    return <Outlet />
+    return <AuthPage />
   }
 
   return (
