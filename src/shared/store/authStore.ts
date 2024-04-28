@@ -1,5 +1,7 @@
 import { create } from 'zustand'
+
 import { User } from '../types'
+import { devtools } from 'zustand/middleware'
 
 interface AuthState {
   user: User | null
@@ -11,12 +13,14 @@ interface AuthState {
   setIsLoading: (isLoading: boolean) => void
 }
 
-export const useAuthStore = create<AuthState>((set) => ({
-  user: null,
-  isInitialized: false,
-  isLoading: false,
+export const useAuthStore = create<AuthState>()(
+  devtools((set) => ({
+    user: null,
+    isInitialized: false,
+    isLoading: false,
 
-  setUser: (user) => set({ user }),
-  setIsInitialized: (isInitialized) => set({ isInitialized }),
-  setIsLoading: (isLoading) => set({ isLoading })
-}))
+    setUser: (user) => set({ user }),
+    setIsInitialized: (isInitialized) => set({ isInitialized }),
+    setIsLoading: (isLoading) => set({ isLoading })
+  }))
+)
