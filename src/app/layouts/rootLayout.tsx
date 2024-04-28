@@ -25,9 +25,10 @@ const RootLayout = () => {
         align={{ base: 'flex-start' }}
       >
         <chakra.main
+          maxH={'100dvh'}
           h={'100dvh'}
           w={{ base: '100dvw', lg: '500px' }}
-          pt={{ base: 6, lg: 8 }}
+          px={4}
           borderRightWidth={{ base: '0px', lg: '2px' }}
           borderRightColor={'lightStroke'}
         >
@@ -39,8 +40,8 @@ const RootLayout = () => {
           direction={{ base: 'row', lg: 'column' }}
           position={{ base: 'absolute', lg: 'initial' }}
           bottom={0}
-          py={{ base: 4, lg: 8 }}
-          px={{ base: 4 }}
+          py={4}
+          px={{ base: 6 }}
         >
           <Navbar />
         </Flex>
