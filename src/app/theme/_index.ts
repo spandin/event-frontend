@@ -71,7 +71,7 @@ const theme = extendTheme({
 
   fonts: {
     heading: 'Jost, sans-serif',
-    body: 'Jost, sans-serif'
+    body: 'Inter, sans-serif'
   },
 
   breakpoints: {
