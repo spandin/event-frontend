@@ -6,7 +6,7 @@ const outline = defineStyle({
   borderColor: 'black',
   borderWidth: '2px',
   fontSize: 'md',
-  fontWeight: 600,
+  fontWeight: 500,
   color: 'black',
 
   _hover: {
@@ -18,7 +18,7 @@ const solid = defineStyle({
   h: 12,
   borderRadius: 10,
   fontSize: 'md',
-  fontWeight: 600,
+  fontWeight: 500,
   background: 'brand.900',
   color: 'white',
 
