@@ -2,13 +2,20 @@ import { useAuthStore } from '@/shared/store/authStore'
 import { useNavigate } from 'react-router-dom'
 import { useAuthError } from './useAuthError'
 import { getUser, login, register, logout } from '@/shared/api/auth'
+import { useShallow } from 'zustand/react/shallow'
 import { BASE_URL } from '@/shared/config'
 
 export const useAuth = () => {
-  const user = useAuthStore((state) => state.user)
-  const isLoading = useAuthStore((state) => state.isLoading)
-  const setUser = useAuthStore((state) => state.setUser)
-  const setIsLoading = useAuthStore((state) => state.setIsLoading)
+  const { user, setUser, isLoading, setIsLoading, isInitialized, setIsInitialized } = useAuthStore(
+    useShallow((state) => ({
+      user: state.user,
+      setUser: state.setUser,
+      isLoading: state.isLoading,
+      setIsLoading: state.setIsLoading,
+      isInitialized: state.isInitialized,
+      setIsInitialized: state.setIsInitialized
+    }))
+  )
 
   const navigate = useNavigate()
   const handleError = useAuthError()
@@ -20,9 +27,9 @@ export const useAuth = () => {
     try {
       const user = await getUser()
       setUser(user)
-      navigate('/')
     } catch {
     } finally {
+      setIsInitialized(true)
       setIsLoading(false)
     }
   }
@@ -75,6 +82,7 @@ export const useAuth = () => {
     logoutUser,
     user,
     isLoading,
-    isAuthenticated
+    isAuthenticated,
+    isInitialized
   }
 }

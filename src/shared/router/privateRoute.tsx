@@ -3,9 +3,9 @@ import { PropsWithChildren } from 'react'
 import { useAuth } from '../hooks'
 
 export const PrivateRoute = ({ children }: PropsWithChildren) => {
-  const { isAuthenticated, isLoading } = useAuth()
+  const { isAuthenticated, isInitialized } = useAuth()
 
-  if (isLoading) {
+  if (!isInitialized) {
     return
   }
 

@@ -1,26 +1,19 @@
 import { useAuth } from '@/shared/hooks'
-import { Center, Spinner } from '@chakra-ui/react'
-import { PropsWithChildren, useEffect, useState } from 'react'
+import { PropsWithChildren, ReactNode, useEffect } from 'react'
 
-export const AuthProvider = ({ children }: PropsWithChildren) => {
-  const [isInitialized, setIsInitilized] = useState(false)
-  const { authenticate, isLoading } = useAuth()
+interface AuthProviderProps extends PropsWithChildren {
+  fallback: ReactNode
+}
+
+export const AuthProvider = ({ children, fallback }: AuthProviderProps) => {
+  const { authenticate, isLoading, isInitialized } = useAuth()
 
   useEffect(() => {
-    const initialize = async () => {
-      await authenticate()
-      setIsInitilized(true)
-    }
-
-    initialize()
+    authenticate()
   }, [])
 
   if (isLoading && !isInitialized) {
-    return (
-      <Center h="100dvh">
-        <Spinner size="lg" thickness="3px" />
-      </Center>
-    )
+    return fallback
   }
 
   return children

@@ -3,20 +3,21 @@ import { chakra, Flex } from '@chakra-ui/react'
 import { Navbar } from '@/widgets/navBar'
 import { useAuth } from '@/shared/hooks'
 import { AuthProvider } from '../providers/authProvider'
+import { Loader } from '@/shared/ui'
 
 const RootLayout = () => {
   const { isAuthenticated } = useAuth()
 
   if (!isAuthenticated) {
     return (
-      <AuthProvider>
+      <AuthProvider fallback={<Loader />}>
         <Outlet />
       </AuthProvider>
     )
   }
 
   return (
-    <AuthProvider>
+    <AuthProvider fallback={<Loader />}>
       <Flex
         maxH={'100dvh'}
         direction={{ base: 'column', lg: 'row-reverse' }}
