@@ -4,7 +4,6 @@ import { Navbar } from '@/widgets/navBar'
 import { useAuth } from '@/shared/hooks'
 import { AuthProvider } from '../providers/authProvider'
 import { Loader } from '@/shared/ui'
-import { AuthPage } from '@/pages/AuthPage'
 
 const RootLayout = () => {
   const { isAuthenticated } = useAuth()
@@ -12,7 +11,7 @@ const RootLayout = () => {
   if (!isAuthenticated) {
     return (
       <AuthProvider fallback={<Loader />}>
-        <AuthPage />
+        <Outlet />
       </AuthProvider>
     )
   }
