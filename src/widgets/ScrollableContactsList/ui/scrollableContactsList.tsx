@@ -28,15 +28,15 @@ export const ScrollableContactsList = () => {
   const { disableScroll, enableScroll } = usePreventBodyScroll()
 
   return (
-    <VStack w={'full'} p={4}>
-      <HStack justify={'space-between'} align={'center'} w={'full'}>
+    <VStack w={'full'}>
+      <HStack w={'full'} justify={'space-between'} align={'center'} px={1}>
         <HStack gap={2} justify={'center'} align={'flex-start'}>
           <Icon boxSize={5} as={FiUsers} strokeWidth={3} />
           <Heading variant={'h4'}>Контакты</Heading>
         </HStack>
 
         <Link to={'/contacts'}>
-          <Text fontWeight={500} color={'gray.500'}>
+          <Text fontWeight={400} color={'gray.500'}>
             все
           </Text>
         </Link>
