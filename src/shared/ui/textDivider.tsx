@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { AbsoluteCenter, Box, Divider, Text } from '@chakra-ui/react'
 
-interface TextDividerProps {
+interface Props {
   children: ReactNode
 }
 
-export const TextDivider: React.FC<TextDividerProps> = ({ children }) => {
+export const TextDivider = ({ children }: Props) => {
   return (
     <Box position={'relative'} w={'70%'}>
       <Divider variant={'thick'} />
