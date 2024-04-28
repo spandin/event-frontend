@@ -3,6 +3,7 @@ import RootLayout from './layouts/rootLayout'
 import { AuthPage } from '@/pages/AuthPage'
 import { GuestRoute, PrivateRoute } from '@/shared/router'
 import { HomePage } from '@/pages/HomePage'
+import { EventPage } from '@/pages/EventsPage'
 
 export const router = createBrowserRouter([
   {
@@ -30,7 +31,15 @@ export const router = createBrowserRouter([
         path: '/events',
         element: (
           <PrivateRoute>
-            <div>Events</div>
+            <EventPage />
+          </PrivateRoute>
+        )
+      },
+      {
+        path: '/events/:id',
+        element: (
+          <PrivateRoute>
+            <div>Events Id</div>
           </PrivateRoute>
         )
       },
