@@ -4,7 +4,7 @@ import { BottomFormText } from './bottomText'
 import { AuthLayout } from './authLayout'
 import { RegisterContent } from './registerContent'
 import { LoginContent } from './loginContent'
-import { AuthFormWithProviders } from '@/widgets/authFormWithProviders'
+import { AuthFormWithProviders } from '@/pages/AuthPage/ui/authFormWithProviders'
 import { LoginForm, RegisterForm } from '@/features/AuthByEmail'
 
 export const AuthPage: React.FC = () => {
