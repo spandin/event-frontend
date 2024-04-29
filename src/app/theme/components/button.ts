@@ -3,15 +3,16 @@ import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 const outline = defineStyle({
   h: 12,
   borderRadius: 10,
-  borderColor: 'black',
+  borderColor: 'lightStroke',
   borderWidth: '2px',
   fontSize: 'md',
   fontWeight: 500,
   color: 'black',
-
   _hover: {
-    backgroundColor: 'gray.100'
-  }
+    borderColor: 'lightHover',
+    bg: 'lightHover'
+  },
+  transition: 'all 0.3s ease-in-out'
 })
 
 const solid = defineStyle({
@@ -23,19 +24,20 @@ const solid = defineStyle({
   color: 'white',
 
   _hover: {
-    background: 'brand.800'
+    background: 'darkBrand'
   },
   _active: {
     background: 'brand.900'
   },
   _loading: {
     opacity: 1,
-    background: 'brand.700',
-
+    background: 'darkBrand',
     _hover: {
-      background: 'brand.900'
+      background: 'darkBrand',
+      opacity: 0.9
     }
-  }
+  },
+  transition: 'all 0.3s ease-in-out'
 })
 
 const circle = defineStyle({
@@ -45,8 +47,8 @@ const circle = defineStyle({
   rounded: 'full',
   borderWidth: '2px',
   borderColor: 'lightStroke',
-
-  _hover: { backgroundColor: 'lightHover' }
+  _hover: { backgroundColor: 'lightHover' },
+  transition: 'all 0.3s ease-in-out'
 })
 
 export const buttonTheme = defineStyleConfig({

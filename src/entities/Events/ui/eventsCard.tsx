@@ -26,9 +26,11 @@ export const EventsCard = ({ event }: { event: Event }) => {
       bg={event.isActive ? 'darkBrand' : 'transparent'}
       color={event.isActive ? 'white' : 'black'}
       _hover={{
-        bg: event.isActive ? 'brand.900' : 'lightHover'
+        borderColor: event.isActive ? 'transparent' : 'darkBrand',
+        bg: event.isActive ? 'darkBrand' : 'lightHover',
+        opacity: event.isActive ? '0.9' : '1'
       }}
-      transition={'background-color 0.3s ease-in-out'}
+      transition={'all 0.3s ease-in-out'}
     >
       <CardHeader w={'full'} p={0}>
         <HStack w={'full'} justify={'space-between'}>

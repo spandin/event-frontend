@@ -9,12 +9,11 @@ const base = definePartsStyle({
   field: {
     h: 12,
     borderRadius: 10,
-    borderColor: 'black',
+    borderColor: 'darkStroke',
     borderWidth: '2px',
     fontSize: 'md',
-    fontFamily: 'Inter',
+    fontFamily: 'Jost',
     backgroundColor: 'white',
-
     _focusVisible: {
       borderColor: 'brand.900',
       backgroundColor: 'lightHover'
@@ -24,7 +23,8 @@ const base = definePartsStyle({
     },
     _placeholder: {
       color: 'gray.500'
-    }
+    },
+    transition: 'all 0.3s ease-in-out'
   }
 })
 

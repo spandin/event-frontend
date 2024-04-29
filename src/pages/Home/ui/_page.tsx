@@ -13,7 +13,7 @@ export const HomePage = () => {
         <CircleButton icon={FiSettings} />
       </HStack>
 
-      <VStack w={'full'} overflowY={'scroll'} py={4} gap={4}>
+      <VStack w={'full'} overflowY={'scroll'} py={4} gap={8}>
         <VStack gap={4}>
           <Avatar
             boxSize={36}
