@@ -1,9 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom'
 import RootLayout from './layouts/rootLayout'
-import { AuthPage } from '@/pages/AuthPage'
-import { GuestRoute, PrivateRoute } from '@/shared/router'
-import { HomePage } from '@/pages/HomePage'
-import { EventPage } from '@/pages/EventsPage'
+import { GuestRoute, PrivateRoute } from '@/shared/router/_index'
+import { AuthPage } from '@/pages/Auth/_index'
+import { EventPage } from '@/pages/Events/_index'
+import { HomePage } from '@/pages/Home/_index'
 
 export const router = createBrowserRouter([
   {

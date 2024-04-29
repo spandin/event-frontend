@@ -1,4 +1,4 @@
-import { useAuth } from '@/shared/hooks'
+import { useAuth } from '@/shared/hooks/_index'
 import { PropsWithChildren, ReactNode, useEffect } from 'react'
 
 interface AuthProviderProps extends PropsWithChildren {

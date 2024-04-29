@@ -1,6 +1,6 @@
 import { timestampToDate } from '@/shared/helpers/parseDate'
 import { Event } from '@/shared/types/events'
-import { CustomLink as Link } from '@/shared/ui'
+import { CustomLink as Link } from '@/shared/ui/_index'
 import {
   Card,
   HStack,

@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom'
 import { chakra, Flex } from '@chakra-ui/react'
 import { Navbar } from '@/widgets/navBar'
-import { useAuth } from '@/shared/hooks'
+import { useAuth } from '@/shared/hooks/_index'
 import { AuthProvider } from '../providers/authProvider'
-import { Loader } from '@/shared/ui'
+import { Loader } from '@/shared/ui/_index'
 
 const RootLayout = () => {
   const { isAuthenticated } = useAuth()

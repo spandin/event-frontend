@@ -1,7 +1,7 @@
 import { FiCalendar, FiHome, FiPieChart, FiPlusCircle, FiSettings, FiUsers } from 'react-icons/fi'
 import { chakra, Flex, Image } from '@chakra-ui/react'
-import { NavIcon } from '@/shared/ui'
-import { ICONS } from '@/shared/assets'
+import { NavIcon } from '@/shared/ui/_index'
+import { ICONS } from '@/shared/assets/_index'
 
 export function Navbar() {
   return (
