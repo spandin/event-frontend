@@ -17,7 +17,7 @@ const base = definePartsStyle({
 
     _focusVisible: {
       borderColor: 'brand.900',
-      backgroundColor: 'gray.100'
+      backgroundColor: 'lightHover'
     },
     _invalid: {
       borderColor: 'invalid'

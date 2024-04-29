@@ -10,6 +10,7 @@ const config = {
 }
 
 export const colors = {
+  textDarkColor: '#101010',
   brand: {
     900: '#4329B5',
     800: '#5841bd',
@@ -21,6 +22,10 @@ export const colors = {
     200: '#d5cfef',
     100: '#eae7f7'
   },
+  darkBrand: '#0D0322',
+  lightHover: '#F6F7FB',
+  lightStroke: '#EAEBEF',
+  darkStroke: '#0D0322',
   invalid: '#FC8181'
 }
 
@@ -35,11 +40,11 @@ const theme = extendTheme({
       },
       '::selection': {
         background: 'brand.100',
-        color: 'black'
+        color: 'textDarkColor'
       },
       body: {
-        color: mode('black.900', 'white.900')(props),
-        bg: mode('white', 'dark.900')(props)
+        color: mode('textDarkColor', 'white.900')(props),
+        bg: mode('white', 'darkBrand')(props)
       }
     })
   },
@@ -47,6 +52,7 @@ const theme = extendTheme({
   components: {
     Text: {
       baseStyle: {
+        fontSize: '18px',
         fontWeight: 400
       }
     },
