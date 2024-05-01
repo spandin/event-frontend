@@ -30,7 +30,7 @@ const RootLayout = () => {
           w={{ base: '100dvw', lg: '500px' }}
           px={4}
           borderRightWidth={{ base: '0px', lg: '2px' }}
-          borderRightColor={'lightStroke'}
+          borderRightColor={'gray.100'}
         >
           <Outlet />
         </chakra.main>

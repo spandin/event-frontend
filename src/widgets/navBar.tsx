@@ -24,7 +24,7 @@ export function Navbar() {
         py={{ base: 2, lg: 2 }}
         px={{ base: 4, lg: 2 }}
         gap={8}
-        bg={'lightHover'}
+        bg={'gray.50'}
         rounded={'20px'}
       >
         <NavIcon to="/events/create" icon={FiPlusCircle} />

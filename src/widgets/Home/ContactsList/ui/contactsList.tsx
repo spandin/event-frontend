@@ -37,9 +37,7 @@ export const ContactsList = () => {
         </HStack>
 
         <Link to={'/contacts'}>
-          <Text fontWeight={400} color={'gray.500'}>
-            все
-          </Text>
+          <Text color={'gray.500'}>все</Text>
         </Link>
       </HStack>
 

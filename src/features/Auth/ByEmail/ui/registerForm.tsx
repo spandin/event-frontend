@@ -40,7 +40,7 @@ export const RegisterForm = () => {
           <chakra.form onSubmit={handleSubmit} noValidate w={{ base: '100%', lg: '80%' }}>
             <VStack spacing={8}>
               <VStack spacing={0} align={'center'}>
-                <Heading variant={'h2'}>Зарегистрируйте аккаунт</Heading>
+                <Heading variant={'h1'}>Зарегистрируйте аккаунт</Heading>
                 <Text color={'gray.500'} fontSize={'md'}>
                   используя email и пароль
                 </Text>

@@ -23,9 +23,7 @@ export const EventsList = () => {
         </HStack>
 
         <Link to={'/events'}>
-          <Text fontWeight={400} color={'gray.500'}>
-            все
-          </Text>
+          <Text color={'gray.500'}>все</Text>
         </Link>
       </HStack>
 

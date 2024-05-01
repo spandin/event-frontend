@@ -3,30 +3,11 @@ import { mode } from '@chakra-ui/theme-tools'
 import type { StyleFunctionProps } from '@chakra-ui/styled-system'
 
 import { buttonTheme, dividerTheme, headingTheme, inputTheme } from './components/_index'
+import { colors } from './colors'
 
 const config = {
   initialColorMode: 'light',
   useSystemColorMode: false
-}
-
-export const colors = {
-  textDarkColor: '#101010',
-  brand: {
-    900: '#4329B5',
-    800: '#5841bd',
-    700: '#6d59c5',
-    600: '#8270ce',
-    500: '#9788d6',
-    400: '#aba0de',
-    300: '#c0b8e6',
-    200: '#d5cfef',
-    100: '#eae7f7'
-  },
-  darkBrand: '#0D0322',
-  lightHover: '#F6F7FB',
-  lightStroke: '#EAEBEF',
-  darkStroke: '#0D0322',
-  invalid: '#FC8181'
 }
 
 const theme = extendTheme({
@@ -39,12 +20,12 @@ const theme = extendTheme({
         WebkitTapHighlightColor: 'transparent'
       },
       '::selection': {
-        background: 'brand.100',
-        color: 'textDarkColor'
+        background: 'lightBrand.100',
+        color: 'black'
       },
       body: {
-        color: mode('textDarkColor', 'white.900')(props),
-        bg: mode('white', 'darkBrand')(props)
+        color: mode('black', 'white')(props),
+        bg: mode('white', 'black')(props)
       }
     })
   },

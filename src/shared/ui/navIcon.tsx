@@ -23,7 +23,7 @@ export const NavIcon = ({ to, icon, size, display }: Props) => {
       boxSize: size || 9,
       rounded: '10px',
       padding: '6px',
-      _hover: { background: 'darkBrand', color: 'white' },
+      _hover: { background: 'darkBrand.100', color: 'white' },
       _focus: { background: 'white', color: 'black' },
       transition: 'all 0.3s ease-in-out'
     }
@@ -35,8 +35,8 @@ export const NavIcon = ({ to, icon, size, display }: Props) => {
       display={display || 'flex'}
       boxSize={size || 9}
       rounded={'10px'}
-      background={isActive(`${to}`) ? 'darkBrand' : 'transparent'}
-      color={isActive(`${to}`) ? 'lightHover' : 'darkBrand'}
+      background={isActive(`${to}`) ? 'darkBrand.100' : 'transparent'}
+      color={isActive(`${to}`) ? 'white' : 'black'}
       to={to}
       transition={'all 0.3s ease-in-out'}
       unstable_viewTransition
