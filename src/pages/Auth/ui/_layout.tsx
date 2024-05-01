@@ -34,7 +34,7 @@ export const AuthPageLayout = ({ authForm, bottomFormText, content }: Props) => 
         justify={'center'}
         align={'center'}
         p={10}
-        bg={'brand.900'}
+        bg={'lightBrand.900'}
         color={'white'}
       >
         {content}

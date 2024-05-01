@@ -3,15 +3,21 @@ import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 const outline = defineStyle({
   h: 12,
   borderRadius: 10,
-  borderColor: 'black',
+  borderColor: 'gray.100',
   borderWidth: '2px',
   fontSize: 'md',
   fontWeight: 500,
+  fontFamily: 'Jost',
   color: 'black',
-
   _hover: {
-    backgroundColor: 'gray.100'
-  }
+    borderColor: 'gray.200',
+    bg: 'gray.200'
+  },
+  _disabled: {
+    borderColor: 'gray.50',
+    bg: 'gray.50'
+  },
+  transition: 'all 0.3s ease-in-out'
 })
 
 const solid = defineStyle({
@@ -19,34 +25,40 @@ const solid = defineStyle({
   borderRadius: 10,
   fontSize: 'md',
   fontWeight: 500,
-  background: 'brand.900',
+  fontFamily: 'Jost',
+  background: 'lightBrand.900',
   color: 'white',
-
   _hover: {
-    background: 'brand.800'
+    background: 'darkBrand.400'
   },
   _active: {
-    background: 'brand.900'
+    background: 'darkBrand.900'
   },
   _loading: {
     opacity: 1,
-    background: 'brand.700',
-
+    background: 'darkBrand.50',
     _hover: {
-      background: 'brand.900'
+      background: 'darkBrand.100'
     }
-  }
+  },
+  _disabled: {
+    bg: 'gray.50',
+    color: 'white'
+  },
+  transition: 'all 0.3s ease-in-out'
 })
 
 const circle = defineStyle({
-  minW: 10,
-  minH: 10,
+  size: 10,
   p: 0,
   rounded: 'full',
   borderWidth: '2px',
-  borderColor: 'lightStroke',
-
-  _hover: { backgroundColor: 'lightHover' }
+  borderColor: 'gray.100',
+  _hover: {
+    backgroundColor: 'gray.200',
+    borderColor: 'gray.200'
+  },
+  transition: 'all 0.3s ease-in-out'
 })
 
 export const buttonTheme = defineStyleConfig({

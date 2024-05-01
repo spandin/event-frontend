@@ -10,6 +10,7 @@ export const AuthAppleButton = () => {
       isLoading={isLoading}
       authenticate={authenticateWithGoogle}
       icon={ICONS.APPLE_LOGO}
+      size={7}
     >
       Войти через Apple
     </OAuthButtonLayout>

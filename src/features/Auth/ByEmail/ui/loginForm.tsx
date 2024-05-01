@@ -30,8 +30,8 @@ export const LoginForm = () => {
     >
       <Formik
         initialValues={{
-          email: '',
-          password: ''
+          email: 'wtest@example.com',
+          password: '12345678s'
         }}
         onSubmit={(values) => {
           const { email, password } = values
@@ -42,7 +42,7 @@ export const LoginForm = () => {
           <chakra.form onSubmit={handleSubmit} noValidate w={{ base: '100%', lg: '80%' }}>
             <VStack spacing={8}>
               <VStack spacing={0} align={'center'}>
-                <Heading variant={'h2'}>Войдите в аккаунт</Heading>
+                <Heading variant={'h1'}>Войдите в аккаунт</Heading>
                 <Text color={'gray.500'} fontSize={'md'}>
                   используя email и пароль
                 </Text>

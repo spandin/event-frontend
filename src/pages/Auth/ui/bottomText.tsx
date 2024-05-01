@@ -19,7 +19,7 @@ export const BottomFormText = ({ text, linkText, onLinkClick }: Props) => {
     >
       <HStack>
         <Text>{text}</Text>
-        <Link onClick={onLinkClick} color={'brand.900'}>
+        <Link onClick={onLinkClick} fontSize={'lg'} color={'lightBrand.900'}>
           {linkText}
         </Link>
       </HStack>

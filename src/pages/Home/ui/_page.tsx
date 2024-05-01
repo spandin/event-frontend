@@ -13,7 +13,7 @@ export const HomePage = () => {
         <CircleButton icon={FiSettings} />
       </HStack>
 
-      <VStack w={'full'} overflowY={'scroll'} py={4} gap={4}>
+      <VStack w={'full'} overflowY={'scroll'} py={4} gap={8}>
         <VStack gap={4}>
           <Avatar
             boxSize={36}
@@ -25,7 +25,7 @@ export const HomePage = () => {
           <Heading variant={'h2'}>{userName}</Heading>
         </VStack>
 
-        <VStack w={'full'} gap={4} p={4} borderWidth={2} borderColor={'lightStroke'} rounded={20}>
+        <VStack w={'full'} gap={4} p={4} borderWidth={2} borderColor={'gray.100'} rounded={20}>
           <ContactsList />
           <EventsList />
         </VStack>
