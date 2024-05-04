@@ -40,8 +40,8 @@ const RootLayout = () => {
           direction={{ base: 'row', lg: 'column' }}
           position={{ base: 'absolute', lg: 'initial' }}
           bottom={0}
-          py={4}
-          px={{ base: 6 }}
+          py={{ base: 2, lg: 6 }}
+          px={{ base: 4, lg: 4 }}
         >
           <Navbar />
         </Flex>

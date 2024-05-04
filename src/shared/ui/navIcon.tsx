@@ -25,7 +25,7 @@ export const NavIcon = ({ to, icon, size, display }: Props) => {
       padding: '6px',
       _hover: { background: 'darkBrand.100', color: 'white' },
       _focus: { background: 'white', color: 'black' },
-      transition: 'all 0.3s ease-in-out'
+      transition: 'all 0.3s'
     }
   })
 
@@ -38,7 +38,7 @@ export const NavIcon = ({ to, icon, size, display }: Props) => {
       background={isActive(`${to}`) ? 'darkBrand.100' : 'transparent'}
       color={isActive(`${to}`) ? 'white' : 'black'}
       to={to}
-      transition={'all 0.3s ease-in-out'}
+      transition={'all 0.3s'}
       unstable_viewTransition
     >
       <NavIconMobile as={icon} />
