@@ -27,5 +27,32 @@ export const events: Event[] = [
     totalCost: 30,
     myPercentage: 100,
     isActive: false
+  },
+  {
+    id: '4',
+    title: 'Картинг Могилев',
+    location: 'улица Челюскинцев, Могилёв',
+    date: 1715349977,
+    totalCost: 30,
+    myPercentage: 100,
+    isActive: false
+  },
+  {
+    id: '5',
+    title: 'Картинг Могилев',
+    location: 'улица Челюскинцев, Могилёв',
+    date: 1715349977,
+    totalCost: 30,
+    myPercentage: 100,
+    isActive: false
+  },
+  {
+    id: '6',
+    title: 'Картинг Могилев',
+    location: 'улица Челюскинцев, Могилёв',
+    date: 1715349977,
+    totalCost: 30,
+    myPercentage: 100,
+    isActive: false
   }
 ]
