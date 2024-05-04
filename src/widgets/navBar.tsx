@@ -6,7 +6,6 @@ import { ICONS } from '@/shared/assets/_index'
 export function Navbar() {
   return (
     <chakra.nav
-      h={'full'}
       w={'full'}
       display={'flex'}
       flexDirection={{ base: 'row', lg: 'column' }}
@@ -21,7 +20,7 @@ export function Navbar() {
         direction={{ base: 'row', lg: 'column' }}
         align={'center'}
         justify={{ base: 'center', lg: 'flex-start' }}
-        py={{ base: 2, lg: 2 }}
+        py={{ base: 2, lg: 4 }}
         px={{ base: 4, lg: 2 }}
         gap={8}
         bg={'gray.50'}
