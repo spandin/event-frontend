@@ -15,6 +15,7 @@ export const OAuthButtonLayout = ({ authenticate, isLoading, icon, children, siz
       onClick={authenticate}
       w={'full'}
       variant={'outline'}
+      fontFamily={'Inter'}
       whiteSpace={'wrap'}
       leftIcon={<Image boxSize={size || 5} src={icon} />}
       isDisabled={isLoading}
