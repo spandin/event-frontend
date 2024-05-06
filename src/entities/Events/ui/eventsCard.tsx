@@ -1,4 +1,4 @@
-import { timestampToDate } from '@/shared/helpers/parseDate'
+import { gradientAnimation } from '@/shared/styles/keyframes'
 import { Event } from '@/shared/types/events'
 import { CustomLink as Link } from '@/shared/ui/_index'
 import {
@@ -12,6 +12,8 @@ import {
   AvatarBadge,
   Heading
 } from '@chakra-ui/react'
+import { format } from 'date-fns'
+import { ru } from 'date-fns/locale'
 
 export const EventsCard = ({ event }: { event: Event }) => {
   return (
@@ -19,16 +21,14 @@ export const EventsCard = ({ event }: { event: Event }) => {
       w={'full'}
       p={4}
       borderColor={'gray.100'}
-      borderWidth={event.isActive ? '0px' : '2px'}
+      borderWidth={event.isActive ? 0 : 2}
       shadow={'none'}
       rounded={20}
       gap={4}
-      bg={event.isActive ? 'darkBrand.100 ' : 'transparent'}
+      bg={event.isActive ? 'linear-gradient(90deg, #3a1891, #480e46)' : 'white'}
+      bgSize={'200% 200%'}
       color={event.isActive ? 'white' : 'black'}
-      _hover={{
-        borderColor: event.isActive ? 'transparent' : 'darkBrand.100',
-        bg: event.isActive ? 'darkBrand.300' : 'transparent'
-      }}
+      animation={`${gradientAnimation} 10s ease infinite`}
       transition={'all 0.3s ease-in-out'}
     >
       <CardHeader w={'full'} p={0}>
@@ -38,7 +38,7 @@ export const EventsCard = ({ event }: { event: Event }) => {
           </Link>
 
           <Text fontSize={'sm'} color={event.isActive ? 'gray.100' : 'gray.500'}>
-            {timestampToDate(event.date)}
+            {format(event.date, 'dd.MM.yyyy', { locale: ru })}
           </Text>
         </HStack>
         <Text
