@@ -1,3 +1,4 @@
+export { CardsList } from './cardsList'
 export { CustomLink } from './customLink'
 export { NavIcon } from './navIcon'
 export { PasswordInput } from './passwordInput'
