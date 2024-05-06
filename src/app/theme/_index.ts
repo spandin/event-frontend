@@ -4,6 +4,7 @@ import type { StyleFunctionProps } from '@chakra-ui/styled-system'
 
 import { buttonTheme, dividerTheme, headingTheme, inputTheme } from './components/_index'
 import { colors } from './colors'
+import { tabsTheme } from './components/tabs'
 
 const config = {
   initialColorMode: 'light',
@@ -47,7 +48,8 @@ const theme = extendTheme({
         fontWeight: 600,
         lineHeight: 1
       }
-    }
+    },
+    Tabs: tabsTheme
   },
 
   fonts: {
