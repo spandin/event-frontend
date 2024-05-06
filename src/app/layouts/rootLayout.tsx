@@ -27,7 +27,7 @@ const RootLayout = () => {
         <chakra.main
           maxH={'100dvh'}
           h={'100dvh'}
-          w={{ base: '100dvw', lg: '500px' }}
+          w={{ base: '100dvw', lg: '460px' }}
           px={4}
           borderRightWidth={{ base: '0px', lg: '2px' }}
           borderRightColor={'gray.100'}
