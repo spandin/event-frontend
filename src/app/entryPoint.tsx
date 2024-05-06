@@ -1,4 +1,4 @@
-import './styles/_global.scss'
+import '@/shared/styles/_global.scss'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
