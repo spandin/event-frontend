@@ -1,58 +1,40 @@
 import { EventsCard } from '@/entities/Events/_index'
-import { events } from '@/shared/api/mockEvents'
-import { Text } from '@chakra-ui/react'
+import { events } from '@/shared/api/mock'
+import { Tabs, TabList, Tab, TabPanels, TabPanel, Box } from '@chakra-ui/react'
+import { sortEventsByActiveAndDate } from '@/shared/helpers/sort'
+import { CardsList } from '@/shared/ui/_index'
 
 export const EventsList = () => {
-  const renderedEvents: JSX.Element[] = []
-
-  const currentDateTime = new Date()
-
-  const activeEvents = events.filter((event) => event.isActive)
-  const futureEvents = events.filter(
-    (event) => !event.isActive && new Date(event.date * 1000) > currentDateTime
+  return (
+    <Box w={'full'} p={4} border={'2px solid'} borderColor={'gray.100'} rounded={20}>
+      <Tabs w={'full'} variant="soft-rounded">
+        <TabList>
+          <Tab
+            px={3}
+            color={'black'}
+            _selected={{ color: 'white', bg: 'lightBrand.900', borderColor: 'lightBrand.900' }}
+          >
+            Встречи {events.length}
+          </Tab>
+          <Tab
+            px={3}
+            color={'black'}
+            _selected={{ color: 'white', bg: 'lightBrand.900', borderColor: 'lightBrand.900' }}
+          >
+            Приглашения
+          </Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+            <CardsList array={sortEventsByActiveAndDate(events)}>
+              {(item) => <EventsCard key={item.id} event={item} />}
+            </CardsList>
+          </TabPanel>
+          <TabPanel>
+            <p>one!</p>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </Box>
   )
-  const pastEvents = events.filter(
-    (event) => !event.isActive && new Date(event.date * 1000) <= currentDateTime
-  )
-
-  if (activeEvents.length > 0) {
-    renderedEvents.push(
-      <Text key="activeText" w={'full'} fontWeight={600} fontSize={'sm'} textAlign={'start'}>
-        Активные:
-      </Text>
-    )
-    activeEvents
-      .sort((a, b) => +new Date(b.date * 1000) - +new Date(a.date * 1000))
-      .forEach((event) => {
-        renderedEvents.push(<EventsCard key={event.id} event={event} />)
-      })
-  }
-
-  if (futureEvents.length > 0) {
-    renderedEvents.push(
-      <Text key="futureText" w={'full'} fontWeight={600} fontSize={'sm'} textAlign={'start'}>
-        Будущие:
-      </Text>
-    )
-    futureEvents
-      .sort((a, b) => +new Date(a.date * 1000) - +new Date(b.date * 1000))
-      .forEach((event) => {
-        renderedEvents.push(<EventsCard key={event.id} event={event} />)
-      })
-  }
-
-  if (pastEvents.length > 0) {
-    renderedEvents.push(
-      <Text key="pastText" w={'full'} fontWeight={600} fontSize={'sm'} textAlign={'start'}>
-        Прошедшие:
-      </Text>
-    )
-    pastEvents
-      .sort((a, b) => +new Date(b.date * 1000) - +new Date(a.date * 1000))
-      .forEach((event) => {
-        renderedEvents.push(<EventsCard key={event.id} event={event} />)
-      })
-  }
-
-  return renderedEvents
 }
