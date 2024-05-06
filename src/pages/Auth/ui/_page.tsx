@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { AUTH_FORMS } from '@/shared/types/types'
-import { BottomFormText } from './bottomText'
-import { RegisterContent } from './registerContent'
-import { LoginContent } from './loginContent'
+import { BottomFormText } from './compose/bottomText'
+import { RegisterContent } from './compose/registerContent'
+import { LoginContent } from './compose/loginContent'
 import { AuthFormWithProviders } from '@/widgets/Auth/authFormWithProviders'
 import { AuthPageLayout } from './_layout'
 
