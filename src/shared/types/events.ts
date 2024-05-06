@@ -2,7 +2,7 @@ export interface Event {
   id: string
   title: string
   location: string
-  date: number
+  date: string
   totalCost: number
   myPercentage: number
   isActive: boolean
