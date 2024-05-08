@@ -1,4 +1,3 @@
-import css from './style.module.scss'
 import { CustomLink as Link } from '@/shared/ui/_index'
 import { Avatar, Flex, Heading, HStack, Icon, Text, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
@@ -28,6 +27,15 @@ export const ContactsList = () => {
   const [items] = useState(users)
   const { disableScroll, enableScroll } = usePreventBodyScroll()
 
+  const styles = {
+    scrollMenuWrapper: {
+      width: '100%'
+    },
+    scrollMenuContainer: {
+      gap: '10px'
+    }
+  }
+
   return (
     <VStack w={'full'}>
       <HStack w={'full'} justify={'space-between'} align={'center'} px={1}>
@@ -43,8 +51,8 @@ export const ContactsList = () => {
 
       <Flex w={'full'} onMouseEnter={disableScroll} onMouseLeave={enableScroll}>
         <ScrollMenu
-          wrapperClassName={css.scrollMenuWrapper}
-          scrollContainerClassName={css.scrollMenuContainer}
+          wrapperClassName={styles.scrollMenuWrapper.width}
+          scrollContainerClassName={styles.scrollMenuContainer.gap}
           onWheel={onWheel}
         >
           {items.map(({ id, name }) => (
