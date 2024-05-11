@@ -25,8 +25,8 @@ export const CardsList = <T,>({ children, array }: Props<T>) => {
               key={index}
               initial={{ opacity: 0, y: -50, width: '100%' }}
               animate={{ opacity: 1, y: 0, width: '100%' }}
-              exit={{ opacity: 0, y: -500 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
+              exit={{ opacity: 0, y: -100 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
             >
               {children(item)}
             </motion.div>
