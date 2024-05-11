@@ -9,9 +9,9 @@ import {
   VStack
 } from '@chakra-ui/react'
 import { Field, Formik } from 'formik'
-import { MembersList } from '../../../../widgets/Events/membersList'
+import { ReactNode } from 'react'
 
-export const CreateEventForm = () => {
+export const CreateEventForm = ({ membersWidget }: { membersWidget?: ReactNode }) => {
   return (
     <Formik
       initialValues={{
@@ -80,7 +80,7 @@ export const CreateEventForm = () => {
               <FormErrorMessage>{errors.date}</FormErrorMessage>
             </FormControl>
 
-            <MembersList />
+            {membersWidget}
           </VStack>
 
           <HStack w={'full'} gap={4}>
