@@ -1,3 +1,4 @@
+export { Logo } from './logo'
 export { CardsList } from './cardsList'
 export { CustomLink } from './customLink'
 export { NavIcon } from './navIcon'
