@@ -33,7 +33,7 @@ export const MembersList = () => {
       rounded={20}
       gap={4}
       bg={'linear-gradient(135deg, #0866F8, #3A1891)'}
-      bgSize={'20% 100%'}
+      bgSize={'10% 100%'}
       boxShadow="inset 0 0 4px rgba(0, 0, 0, 0.2)"
       animation={`${gradientAnimation} 20s ease infinite`}
     >

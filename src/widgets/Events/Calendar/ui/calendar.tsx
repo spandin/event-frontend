@@ -61,32 +61,36 @@ export const Calendar = () => {
     const dates = eachDayOfInterval({ start: startOfMonthDate, end: endOfMonthDate })
 
     return (
-      <Grid templateColumns="repeat(7, 1fr)" className="calendar" w={'full'} gap={2}>
-        {dates.map((date) => (
-          <Box key={date.toISOString()} position="relative" pb="100%">
-            <Button
-              position="absolute"
-              top="0"
-              left="0"
-              w="full"
-              h="full"
-              variant="outline"
-              borderWidth={isCurrentDate(date) ? '2px' : '0'}
-              borderColor={'lightBrand.900'}
-              bg={
-                highlightedDate?.toISOString() === date.toISOString()
-                  ? 'darkBrand.50'
-                  : isEventDate(date)
-                    ? 'lightBrand.200'
-                    : 'gray.50'
-              }
-              color={highlightedDate?.toISOString() === date.toISOString() ? 'white' : 'black'}
-              onClick={() => handleDateClick(date)}
-            >
-              {date.getDate()}
-            </Button>
-          </Box>
-        ))}
+      <Grid templateColumns="repeat(7, 1fr)" w={'full'} gap={2}>
+        {dates.map((date) => {
+          const dateISOString = date.toISOString()
+
+          return (
+            <Box key={dateISOString} position="relative" pb="100%">
+              <Button
+                position="absolute"
+                top="0"
+                left="0"
+                w="full"
+                h="full"
+                variant="outline"
+                borderWidth={isCurrentDate(date) ? '2px' : '0'}
+                borderColor={'lightBrand.900'}
+                bg={
+                  highlightedDate?.toISOString() === dateISOString
+                    ? 'darkBrand.50'
+                    : isEventDate(date)
+                      ? 'lightBrand.200'
+                      : 'gray.50'
+                }
+                color={highlightedDate?.toISOString() === dateISOString ? 'white' : 'black'}
+                onClick={() => handleDateClick(date)}
+              >
+                {date.getDate()}
+              </Button>
+            </Box>
+          )
+        })}
       </Grid>
     )
   }

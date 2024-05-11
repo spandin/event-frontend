@@ -20,15 +20,14 @@ export const EventsCard = ({ event }: { event: Event }) => {
     <Card
       w={'full'}
       p={4}
-      borderColor={'gray.100'}
-      borderWidth={event.isActive ? 0 : 2}
-      shadow={'none'}
-      rounded={20}
       gap={4}
       bg={event.isActive ? 'linear-gradient(135deg, #3A1891, #000)' : 'white'}
       bgSize={'10% 100%'}
-      boxShadow={event.isActive ? 'inset 0 0 4px rgba(0, 0, 0, 0.2)' : 'transparent'}
       color={event.isActive ? 'white' : 'black'}
+      borderColor={'gray.100'}
+      borderWidth={event.isActive ? 0 : 2}
+      rounded={20}
+      boxShadow={event.isActive ? 'inset 0 0 4px rgba(0, 0, 0, 0.2)' : 'transparent'}
       animation={`${gradientAnimation} 20s ease infinite`}
       transition={'all 0.3s ease-in-out'}
     >

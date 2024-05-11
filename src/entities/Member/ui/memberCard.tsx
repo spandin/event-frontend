@@ -1,5 +1,5 @@
-import { Avatar, Card, HStack, Text } from '@chakra-ui/react'
-import { CustomLink } from '@/shared/ui/_index'
+import { Avatar, Card, Heading, HStack } from '@chakra-ui/react'
+import { CustomLink as Link } from '@/shared/ui/_index'
 
 interface Props {
   id: string
@@ -15,15 +15,14 @@ export const MemberCard = ({ member }: { member: Props }) => {
       align={'center'}
       justify={'space-between'}
       bg={'transparent'}
+      color={'white'}
       shadow={'none'}
     >
       <HStack gap={3}>
         <Avatar src={member.img} boxSize={8} name={member.name} />
-        <CustomLink to={`users/${member.id}`}>
-          <Text fontFamily={'Jost'} fontSize={'md'} fontWeight={500} color={'white'}>
-            {member.name}
-          </Text>
-        </CustomLink>
+        <Link to={`users/${member.id}`}>
+          <Heading variant={'h4'}>{member.name}</Heading>
+        </Link>
       </HStack>
     </Card>
   )
