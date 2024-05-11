@@ -11,7 +11,7 @@ export function Navbar() {
       alignItems={'center'}
       justifyContent={{ base: 'center', lg: 'flex-start' }}
       gap={8}
-      bg={'gray.50'}
+      bg={{ base: 'gray.50', lg: 'transparent' }}
     >
       <Logo size={10} display={{ base: 'none', lg: 'flex' }} />
 
