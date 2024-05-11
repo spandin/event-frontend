@@ -47,19 +47,19 @@ const solid = defineStyle({
   fontSize: 'md',
   fontWeight: 500,
   fontFamily: 'Jost',
-  background: 'lightBrand.900',
+  bg: 'lightBrand.900',
   color: 'white',
   _hover: {
-    background: 'lightBrand.800'
+    bg: 'lightBrand.800'
   },
   _active: {
-    background: 'darkBrand.900'
+    bg: 'darkBrand.900'
   },
   _loading: {
     opacity: 1,
-    background: 'darkBrand.50',
+    bg: 'darkBrand.50',
     _hover: {
-      background: 'darkBrand.100'
+      bg: 'darkBrand.100'
     }
   },
   _disabled: {
@@ -74,16 +74,16 @@ const solidDark = defineStyle({
   fontSize: 'md',
   fontWeight: 500,
   fontFamily: 'Jost',
-  background: 'darkBrand.100',
+  bg: 'darkBrand.100',
   color: 'white',
   _hover: {
-    background: 'darkBrand.50'
+    bg: 'darkBrand.50'
   },
   _loading: {
     opacity: 1,
-    background: 'darkBrand.50',
+    bg: 'darkBrand.50',
     _hover: {
-      background: 'darkBrand.100'
+      bg: 'darkBrand.100'
     }
   },
   _disabled: {
@@ -99,8 +99,9 @@ const circle = defineStyle({
   rounded: 'full',
   borderWidth: '2px',
   borderColor: 'gray.100',
+  bg: 'white',
   _hover: {
-    backgroundColor: 'gray.200',
+    bg: 'gray.200',
     borderColor: 'gray.200'
   },
   transition: 'all 0.3s ease-in-out'
