@@ -4,7 +4,7 @@ import { ICONS } from '../assets/_index'
 interface Props {
   size?: number
   display?: ResponsiveValue<string | (string & object)>
-  justify: ResponsiveValue<string | (string & object)>
+  justify?: ResponsiveValue<string | (string & object)>
   withName?: boolean
 }
 

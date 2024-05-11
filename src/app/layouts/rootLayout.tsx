@@ -38,10 +38,8 @@ const RootLayout = () => {
         <Flex
           w={{ base: 'full', lg: 'auto' }}
           direction={{ base: 'row', lg: 'column' }}
-          position={{ base: 'absolute', lg: 'initial' }}
-          bottom={0}
-          py={{ base: 2, lg: 6 }}
-          px={{ base: 4, lg: 4 }}
+          py={{ base: 0, lg: 6 }}
+          px={{ base: 0, lg: 4 }}
         >
           <Navbar />
         </Flex>

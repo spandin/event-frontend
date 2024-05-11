@@ -8,12 +8,12 @@ export const HomePage = () => {
   const userName = 'John Wick'
   return (
     <VStack h={'full'} gap={0}>
-      <HStack w={'full'} justify={'space-between'} pt={6}>
+      <HStack w={'full'} justify={'space-between'} pt={{ base: 4, lg: 6 }}>
         <CircleButton icon={FiBell} />
         <CircleButton icon={FiSettings} />
       </HStack>
 
-      <VStack w={'full'} overflowY={'scroll'} pb={6} gap={0}>
+      <VStack w={'full'} overflowY={'scroll'} pb={{ base: 4, lg: 6 }} gap={0}>
         <VStack w={'full'} py={10} gap={4}>
           <Avatar
             boxSize={36}

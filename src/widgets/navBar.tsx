@@ -1,7 +1,6 @@
 import { FiCalendar, FiHome, FiPieChart, FiPlusCircle, FiSettings, FiUsers } from 'react-icons/fi'
-import { chakra, Flex, Image } from '@chakra-ui/react'
-import { NavIcon } from '@/shared/ui/_index'
-import { ICONS } from '@/shared/assets/_index'
+import { chakra, Flex } from '@chakra-ui/react'
+import { Logo, NavIcon } from '@/shared/ui/_index'
 
 export function Navbar() {
   return (
@@ -12,8 +11,9 @@ export function Navbar() {
       alignItems={'center'}
       justifyContent={{ base: 'center', lg: 'flex-start' }}
       gap={8}
+      bg={'gray.50'}
     >
-      <Image src={ICONS.APP_LOGO} boxSize={10} display={{ base: 'none', lg: 'flex' }} />
+      <Logo size={10} display={{ base: 'none', lg: 'flex' }} />
 
       <Flex
         w={'full'}
@@ -21,9 +21,8 @@ export function Navbar() {
         align={'center'}
         justify={{ base: 'center', lg: 'flex-start' }}
         py={{ base: 2, lg: 4 }}
-        px={{ base: 4, lg: 2 }}
+        px={{ base: 0, lg: 2 }}
         gap={8}
-        bg={'gray.50'}
         rounded={'20px'}
       >
         <NavIcon to="/events/create" icon={FiPlusCircle} />
