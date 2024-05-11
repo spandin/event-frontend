@@ -9,7 +9,7 @@ import {
   VStack
 } from '@chakra-ui/react'
 import { Field, Formik } from 'formik'
-import { MembersList } from './compose/membersList'
+import { MembersList } from '../../../../widgets/Events/membersList'
 
 export const CreateEventForm = () => {
   return (
@@ -34,7 +34,7 @@ export const CreateEventForm = () => {
           flexDirection={'column'}
           justifyContent={'space-between'}
         >
-          <VStack align="start" gap={4}>
+          <VStack align="start" pb={4} gap={4}>
             <FormControl isInvalid={!!errors.title && touched.title}>
               <FormLabel htmlFor="title">Название</FormLabel>
               <Field
@@ -84,9 +84,10 @@ export const CreateEventForm = () => {
           </VStack>
 
           <HStack w={'full'} gap={4}>
-            <Button w={'full'} h={12} variant={'solid'} type="submit" isLoading={isSubmitting}>
+            <Button w={'full'} h={12} variant={'outline'} type="submit" isLoading={isSubmitting}>
               Создать
             </Button>
+
             <Button w={'full'} h={12} variant={'solidDark'} onClick={() => resetForm()}>
               Очистить
             </Button>

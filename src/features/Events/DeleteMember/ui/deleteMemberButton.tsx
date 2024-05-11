@@ -6,6 +6,7 @@ import {
   AlertDialogHeader,
   AlertDialogOverlay,
   Button,
+  Text,
   useDisclosure
 } from '@chakra-ui/react'
 import { useCallback, useRef } from 'react'
@@ -60,7 +61,15 @@ export const DeleteMemberButton = ({ member }: { member: Props }) => {
               Удаление участника
             </AlertDialogHeader>
 
-            <AlertDialogBody>{`Вы действительно хотети удалить ${member.name} из участников?`}</AlertDialogBody>
+            <AlertDialogBody>
+              <Text>
+                Вы действительно хотети удалить{' '}
+                <Text display={'inline'} fontWeight={600}>
+                  {member.name}
+                </Text>{' '}
+                из участников?
+              </Text>
+            </AlertDialogBody>
 
             <AlertDialogFooter>
               <Button h={10} px={4} variant={'outline'} ref={cancelRef} onClick={onClose}>
