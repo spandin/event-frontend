@@ -18,8 +18,8 @@ export const BottomFormText = ({ text, linkText, onLinkClick }: Props) => {
       style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
     >
       <HStack>
-        <Text>{text}</Text>
-        <Link onClick={onLinkClick} fontSize={'lg'} color={'lightBrand.900'}>
+        <Text fontSize={'md'}>{text}</Text>
+        <Link onClick={onLinkClick} fontSize={'md'} color={'lightBrand.900'}>
           {linkText}
         </Link>
       </HStack>

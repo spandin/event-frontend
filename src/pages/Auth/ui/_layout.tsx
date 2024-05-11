@@ -1,7 +1,6 @@
 import { ReactNode } from 'react'
-import { Grid, Flex, HStack, Heading, Image } from '@chakra-ui/react'
-
-import { ICONS } from '@/shared/assets/_index'
+import { Grid, Flex } from '@chakra-ui/react'
+import { Logo } from '@/shared/ui/logo'
 
 interface Props {
   authForm: ReactNode
@@ -19,10 +18,7 @@ export const AuthPageLayout = ({ authForm, bottomFormText, content }: Props) => 
         py={{ base: 6, md: 12 }}
         px={8}
       >
-        <HStack alignSelf={{ base: 'flex-start', lg: 'center' }} gap={2}>
-          <Image boxSize={6} src={ICONS.APP_LOGO} />
-          <Heading variant={'h3'}>Event App</Heading>
-        </HStack>
+        <Logo withName={true} justify={{ base: 'flex-start', lg: 'center' }} />
 
         {authForm}
 
