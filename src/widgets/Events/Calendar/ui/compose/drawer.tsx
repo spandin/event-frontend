@@ -37,15 +37,15 @@ export const CalendarDrawer = ({
     <Drawer isOpen={isDrawerOpen} placement="right" onClose={closeDrawer} size="md">
       <DrawerOverlay />
       {selectedEvent ? (
-        <DrawerContent p={2}>
-          <DrawerHeader>
+        <DrawerContent>
+          <DrawerHeader py={{ base: 6, lg: 8 }}>
             <HStack justify={'space-between'}>
               <Heading variant={'h2'}>{selectedEvent.title}</Heading>
               <DrawerCloseButton pos={'initial'} />
             </HStack>
           </DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody pb={{ base: 4, lg: 6 }}>
             <Text>
               <strong>Место:</strong> {selectedEvent.location}
             </Text>
@@ -61,14 +61,14 @@ export const CalendarDrawer = ({
           </DrawerBody>
         </DrawerContent>
       ) : (
-        <DrawerContent p={2}>
-          <DrawerHeader>
+        <DrawerContent>
+          <DrawerHeader py={{ base: 6, lg: 8 }}>
             <HStack justify={'space-between'}>
               <Heading variant={'h2'}>Создание встречи</Heading>
               <DrawerCloseButton pos={'initial'} />
             </HStack>
           </DrawerHeader>
-          <DrawerBody>
+          <DrawerBody pb={{ base: 4, lg: 6 }}>
             <CreateEventForm membersWidget={<MembersList />} />
           </DrawerBody>
         </DrawerContent>
