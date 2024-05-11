@@ -1,5 +1,6 @@
 import { CreateEventForm } from '@/features/Events/CreateEvent/_index'
 import { Event } from '@/shared/types/events'
+import { MembersList } from '@/widgets/Events/membersList'
 import {
   DrawerContent,
   DrawerHeader,
@@ -68,7 +69,7 @@ export const CalendarDrawer = ({
             </HStack>
           </DrawerHeader>
           <DrawerBody>
-            <CreateEventForm />
+            <CreateEventForm membersWidget={<MembersList />} />
           </DrawerBody>
         </DrawerContent>
       )}
