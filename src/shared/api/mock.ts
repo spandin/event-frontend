@@ -60,12 +60,38 @@ export const events: Event[] = [
 export const members = [
   {
     id: '1a',
-    name: 'Stanislau',
-    img: 'https://avatars.mds.yandex.net/i?id=c3af4cc2793f2182167ea914542aa50707833a19-12497202-images-thumbs&n=13'
+    name: 'Даниил Михайлов',
+    img: 'https://avatars.mds.yandex.net/i?id=c3af4cc2793f2182167ea914542aa50707833a19-12497202-images-thumbs&n=13',
+    isOwner: true
   },
   {
     id: '1b',
-    name: 'Nikita',
-    img: 'https://avatars.mds.yandex.net/i?id=1d3d7556d577914e7bea3a3984f248bfe336afab-12939114-images-thumbs&n=13'
+    name: 'Кира Иванова',
+    img: 'https://avatars.mds.yandex.net/i?id=14e4fe274112559252a4c9f64c97c1d19c579283-11449045-images-thumbs&n=13'
+  },
+  {
+    id: '1c',
+    name: 'Кирилл Антипов',
+    img: 'https://avatars.mds.yandex.net/i?id=215af183a1d7195b0a76614e19bda48fd0520cac-11543319-images-thumbs&n=13'
+  },
+  {
+    id: '1d',
+    name: 'Анастасия Ковалева',
+    img: 'https://avatars.mds.yandex.net/i?id=6492e2f3c7e244aad095c24d701142f3a945348b-12473946-images-thumbs&n=13'
+  },
+  {
+    id: '1e',
+    name: 'Варвара Лукьянова  ',
+    img: 'https://avatars.mds.yandex.net/i?id=ea6b7dfae533b0f2f61035552ee758977f3f53a9-11444350-images-thumbs&n=13'
+  },
+  {
+    id: '1f',
+    name: 'Варвара Толкачева',
+    img: 'https://avatars.mds.yandex.net/i?id=c20660e3101281b7df7f802dcd19a89ecc6fce80-7757532-images-thumbs&n=13'
+  },
+  {
+    id: '1g',
+    name: 'Евгения Лазарева',
+    img: 'https://avatars.mds.yandex.net/i?id=7d584f32d325ec382ce05aad4aa31fdcda6716c1-12218216-images-thumbs&n=13'
   }
 ]
