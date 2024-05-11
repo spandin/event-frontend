@@ -25,10 +25,10 @@ export const EventsCard = ({ event }: { event: Event }) => {
       shadow={'none'}
       rounded={20}
       gap={4}
-      bg={event.isActive ? 'linear-gradient(90deg, #3a1891, #480e46)' : 'white'}
-      bgSize={'200% 200%'}
+      bg={event.isActive ? 'linear-gradient(300deg, #3A1891, #F2525E)' : 'white'}
+      bgSize={'10% 100%'}
       color={event.isActive ? 'white' : 'black'}
-      animation={`${gradientAnimation} 10s ease infinite`}
+      animation={`${gradientAnimation} 20s ease infinite`}
       transition={'all 0.3s ease-in-out'}
     >
       <CardHeader w={'full'} p={0}>
