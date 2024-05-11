@@ -32,7 +32,7 @@ export const MembersList = () => {
       p={4}
       rounded={20}
       gap={4}
-      bg={'linear-gradient(135deg, #0866F8, #3A1891)'}
+      bg={'linear-gradient(30deg, #3A1891, #5A48B7)'}
       bgSize={'10% 100%'}
       boxShadow="inset 0 0 4px rgba(0, 0, 0, 0.2)"
       animation={`${gradientAnimation} 20s ease infinite`}
@@ -42,7 +42,20 @@ export const MembersList = () => {
           Участники
         </Heading>
 
-        <AddMemberButton />
+        <HStack w={'full'} justify={'flex-end'}>
+          <AddMemberButton />
+          {visibleCards >= members.length && (
+            <Button h={9} variant={'solidDark'} onClick={() => setVisibleCards(initialLengthCards)}>
+              Свернуть
+            </Button>
+          )}
+
+          {visibleCards < members.length && (
+            <Button h={9} variant={'solidDark'} onClick={loadMoreMembers}>
+              Ещё +{members.length - visibleCards}
+            </Button>
+          )}
+        </HStack>
       </HStack>
 
       <VStack w={'full'} gap={4}>
@@ -72,31 +85,6 @@ export const MembersList = () => {
           <Text color={'gray.100'} fontFamily={'Jost'} fontWeight={400} fontSize={'sm '}></Text>
         )}
       </VStack>
-      <HStack w={'full'} justify={'flex-start'}>
-        {visibleCards >= members.length && (
-          <Button
-            w={'full'}
-            h={10}
-            variant={'solidDark'}
-            rounded={'full'}
-            onClick={() => setVisibleCards(initialLengthCards)}
-          >
-            Свернуть
-          </Button>
-        )}
-
-        {visibleCards < members.length && (
-          <Button
-            w={'full'}
-            h={10}
-            variant={'solidDark'}
-            rounded={'full'}
-            onClick={loadMoreMembers}
-          >
-            Ещё +{members.length - visibleCards}
-          </Button>
-        )}
-      </HStack>
     </VStack>
   )
 }

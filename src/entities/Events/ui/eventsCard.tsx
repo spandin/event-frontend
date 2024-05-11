@@ -21,8 +21,8 @@ export const EventsCard = ({ event }: { event: Event }) => {
       w={'full'}
       p={4}
       gap={4}
-      bg={event.isActive ? 'linear-gradient(135deg, #3A1891, #000)' : 'white'}
-      bgSize={'10% 100%'}
+      bg={event.isActive ? 'linear-gradient(30deg, #3A1891, #5A48B7)' : 'white'}
+      bgSize={'20% 100%'}
       color={event.isActive ? 'white' : 'black'}
       borderColor={'gray.100'}
       borderWidth={event.isActive ? 0 : 2}
