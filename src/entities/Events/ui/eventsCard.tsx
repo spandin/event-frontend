@@ -25,8 +25,9 @@ export const EventsCard = ({ event }: { event: Event }) => {
       shadow={'none'}
       rounded={20}
       gap={4}
-      bg={event.isActive ? 'linear-gradient(300deg, #3A1891, #F2525E)' : 'white'}
+      bg={event.isActive ? 'linear-gradient(135deg, #3A1891, #000)' : 'white'}
       bgSize={'10% 100%'}
+      boxShadow={event.isActive ? 'inset 0 0 4px rgba(0, 0, 0, 0.2)' : 'transparent'}
       color={event.isActive ? 'white' : 'black'}
       animation={`${gradientAnimation} 20s ease infinite`}
       transition={'all 0.3s ease-in-out'}
