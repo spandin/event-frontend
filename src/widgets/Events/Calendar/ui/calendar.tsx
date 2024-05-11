@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import { Flex, Text, Button, Grid, HStack, VStack } from '@chakra-ui/react'
+import { useEffect, useState } from 'react'
+import { Flex, Text, Button, Grid, HStack, VStack, Box } from '@chakra-ui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import { Event } from '@/shared/types/events'
 import { events } from '@/shared/api/mock'
 import { formatDate } from '../helpers/formatDate'
-import { CalendarDrawer } from './compose/calendarDrawer'
+import { CalendarDrawer } from './compose/drawer'
 import {
   addMonths,
   eachDayOfInterval,
@@ -19,8 +19,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 export const Calendar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false)
   const [selectedDate, setSelectedDate] = useState<Date>(new Date())
+  const [highlightedDate, setHighlightedDate] = useState<Date | null>(new Date())
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
   const [animationDirection, setAnimationDirection] = useState<'left' | 'right' | null>(null)
+
+  useEffect(() => {
+    if (!isDrawerOpen) {
+      setHighlightedDate(null)
+    }
+  }, [isDrawerOpen])
 
   const isEventDate = (date: Date): boolean => {
     return events.some((event) => isSameDay(new Date(event.date), date))
@@ -35,6 +42,7 @@ export const Calendar = () => {
 
     setSelectedEvent(clickedEvent || null)
     setIsDrawerOpen(true)
+    setHighlightedDate(date)
   }
 
   const previousMonth = () => {
@@ -53,19 +61,31 @@ export const Calendar = () => {
     const dates = eachDayOfInterval({ start: startOfMonthDate, end: endOfMonthDate })
 
     return (
-      <Grid templateColumns="repeat(7, 1fr)" w={'full'} gap={2} className="calendar">
+      <Grid templateColumns="repeat(7, 1fr)" className="calendar" w={'full'} gap={2}>
         {dates.map((date) => (
-          <Button
-            key={date.toISOString()}
-            variant="outline"
-            borderWidth={isCurrentDate(date) ? '2px' : '0'}
-            borderColor={'lightBrand.900'}
-            bg={isEventDate(date) ? 'lightBrand.200' : 'gray.50'}
-            _hover={{ bg: 'darkBrand.50', color: 'white' }}
-            onClick={() => handleDateClick(date)}
-          >
-            {date.getDate()}
-          </Button>
+          <Box key={date.toISOString()} position="relative" pb="100%">
+            <Button
+              position="absolute"
+              top="0"
+              left="0"
+              w="full"
+              h="full"
+              variant="outline"
+              borderWidth={isCurrentDate(date) ? '2px' : '0'}
+              borderColor={'lightBrand.900'}
+              bg={
+                highlightedDate?.toISOString() === date.toISOString()
+                  ? 'darkBrand.50'
+                  : isEventDate(date)
+                    ? 'lightBrand.200'
+                    : 'gray.50'
+              }
+              color={highlightedDate?.toISOString() === date.toISOString() ? 'white' : 'black'}
+              onClick={() => handleDateClick(date)}
+            >
+              {date.getDate()}
+            </Button>
+          </Box>
         ))}
       </Grid>
     )
@@ -102,7 +122,7 @@ export const Calendar = () => {
             opacity: 0,
             x: animationDirection === 'left' ? '100%' : '-100%'
           }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.2 }}
         >
           {renderCalendar()}
         </motion.div>
