@@ -1,6 +1,6 @@
 import { Heading, HStack, VStack } from '@chakra-ui/react'
 import { Calendar } from '@/widgets/Events/Calendar/_index'
-import { EventsList } from '@/widgets/Events/EventsList'
+import { EventsList } from '@/widgets/Events/eventsList'
 
 export const EventPage = () => {
   return (
