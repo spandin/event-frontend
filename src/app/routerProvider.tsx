@@ -44,10 +44,6 @@ export const router = createBrowserRouter([
         )
       },
       {
-        path: '/events/create',
-        element: <div>Create Event</div>
-      },
-      {
         path: '/contacts',
         element: <div>Contacts</div>
       },
