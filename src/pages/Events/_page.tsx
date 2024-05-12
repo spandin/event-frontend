@@ -5,7 +5,7 @@ import { Logo } from '@/shared/ui/logo'
 
 export const EventPage = () => {
   return (
-    <VStack h={'full'} overflowY={'scroll'} py={{ base: 4, lg: 6 }} gap={{ base: 4, lg: 8 }}>
+    <VStack h={'full'} overflowY={'scroll'} gap={{ base: 4, lg: 12 }}>
       <HStack w={'full'} minH={'40px'} justify={'flex-start'} gap={4}>
         <Logo display={{ base: 'flex', lg: 'none' }} />
         <Heading variant={'h2'}>Встречи</Heading>
