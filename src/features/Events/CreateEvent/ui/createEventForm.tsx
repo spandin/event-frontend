@@ -33,8 +33,9 @@ export const CreateEventForm = ({ membersWidget }: { membersWidget?: ReactNode }
           display={'flex'}
           flexDirection={'column'}
           justifyContent={'space-between'}
+          gap={4}
         >
-          <VStack align="start" pb={4} gap={4}>
+          <VStack align="start" gap={4}>
             <FormControl isInvalid={!!errors.title && touched.title}>
               <FormLabel htmlFor="title">Название</FormLabel>
               <Field
@@ -83,7 +84,7 @@ export const CreateEventForm = ({ membersWidget }: { membersWidget?: ReactNode }
             {membersWidget}
           </VStack>
 
-          <HStack w={'full'} gap={4}>
+          <HStack w={'full'} pb={4} gap={4}>
             <Button w={'full'} h={12} variant={'outline'} type="submit" isLoading={isSubmitting}>
               Создать
             </Button>
