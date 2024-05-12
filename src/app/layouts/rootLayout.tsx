@@ -29,7 +29,6 @@ const RootLayout = () => {
           h={'100dvh'}
           w={{ base: '100dvw', lg: '460px' }}
           px={4}
-          py={{ base: 4, lg: 6 }}
           borderRightWidth={{ base: '0px', lg: '2px' }}
           borderRightColor={'gray.100'}
         >

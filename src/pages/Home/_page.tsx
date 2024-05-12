@@ -7,13 +7,13 @@ import { FiBell, FiSettings } from 'react-icons/fi'
 export const HomePage = () => {
   const userName = 'John Wick'
   return (
-    <VStack h={'full'} gap={0}>
+    <VStack h={'full'} w={'full'} py={{ base: 4, lg: 6 }} overflowY={'scroll'} gap={0}>
       <HStack w={'full'} justify={'space-between'}>
         <CircleButton icon={FiBell} />
         <CircleButton icon={FiSettings} />
       </HStack>
 
-      <VStack w={'full'} overflowY={'scroll'} gap={0}>
+      <VStack w={'full'} gap={0}>
         <VStack w={'full'} py={12} gap={4}>
           <Avatar
             boxSize={36}
@@ -25,7 +25,7 @@ export const HomePage = () => {
           <Heading variant={'h2'}>{userName}</Heading>
         </VStack>
 
-        <VStack w={'full'} gap={4} p={4} borderWidth={2} borderColor={'gray.100'} rounded={20}>
+        <VStack w={'full'} p={4} borderWidth={2} borderColor={'gray.100'} rounded={20} gap={4}>
           <ContactsList />
           <EventsList />
         </VStack>
